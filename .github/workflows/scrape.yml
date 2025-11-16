@@ -2,87 +2,187 @@ name: Scrape Tournaments
 
 on:
   schedule:
-    - cron: '*/15 * * * *'  # Every 15 minutes UTC
-  workflow_dispatch:
+    - cron: '*/15 * * * *'  # Every 15 minutes
+  workflow_dispatch:  # Manual trigger
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     
-    # Set environment variables for timezone
     env:
-      TZ: America/New_York  # Eastern Time
+      TZ: America/New_York
     
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      
+      - name: Verify checkout
+        run: |
+          echo "Working directory: $(pwd)"
+          echo "Files in repo:"
+          ls -la
       
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       
-      - name: Install Chrome and ChromeDriver
-        uses: browser-actions/setup-chrome@latest
-        with:
-          chrome-version: stable
-      
-      - name: Verify timezone
+      - name: Verify Python
         run: |
-          echo "Current time (UTC): $(date -u)"
-          echo "Current time (Local): $(date)"
+          python --version
+          pip --version
+      
+      - name: Check timezone
+        run: |
           echo "Timezone: $TZ"
+          echo "Current time: $(date)"
+          echo "Today's date: $(date '+%Y/%m/%d')"
+      
+      - name: Install Chrome
+        run: |
+          wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+          echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+      
+      - name: Install ChromeDriver
+        run: |
+          # Get Chrome version
+          CHROME_VERSION=$(google-chrome --version | awk '{print $3}' | cut -d. -f1)
+          echo "Chrome version: $CHROME_VERSION"
+          
+          # Download matching ChromeDriver from new location
+          wget -q "https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json" -O versions.json
+          
+          # Get the latest stable ChromeDriver URL
+          DRIVER_URL=$(python3 -c "
+          import json
+          import sys
+          with open('versions.json') as f:
+              data = json.load(f)
+          for v in reversed(data['versions']):
+              if 'downloads' in v and 'chromedriver' in v['downloads']:
+                  for d in v['downloads']['chromedriver']:
+                      if d['platform'] == 'linux64':
+                          print(d['url'])
+                          sys.exit(0)
+          ")
+          
+          echo "ChromeDriver URL: $DRIVER_URL"
+          
+          # Download and install
+          wget -q "$DRIVER_URL" -O chromedriver-linux64.zip
+          unzip -q chromedriver-linux64.zip
+          sudo mv chromedriver-linux64/chromedriver /usr/local/bin/
+          sudo chmod +x /usr/local/bin/chromedriver
+          
+          # Verify
+          chromedriver --version
       
       - name: Install Python packages
-        run: pip install selenium pytz
-      
-      - name: Modify script for GitHub Actions
         run: |
-          # Set timezone in script
-          sed -i '1a import os\nos.environ["TZ"] = "America/New_York"' bankshot_monitor_multi.py
+          pip install selenium
+          pip list
+      
+      - name: Check if scraper exists
+        run: |
+          if [ -f bankshot_monitor_multi.py ]; then
+            echo "✓ Scraper file found"
+            wc -l bankshot_monitor_multi.py
+          else
+            echo "✗ Scraper file NOT found!"
+            echo "Files in directory:"
+            ls -la
+            exit 1
+          fi
+      
+      - name: Modify scraper for GitHub Actions
+        run: |
+          # Create a modified version
+          cp bankshot_monitor_multi.py scraper_github.py
           
           # Change paths
-          sed -i 's|/home/pi/tournament_data.json|tournament_data.json|g' bankshot_monitor_multi.py
-          sed -i 's|/var/www/html/tournament_data.json|tournament_data.json|g' bankshot_monitor_multi.py
-          sed -i 's|/home/pi/logs/tournament_monitor.log|scraper.log|g' bankshot_monitor_multi.py
+          sed -i 's|/home/pi/tournament_data.json|tournament_data.json|g' scraper_github.py
+          sed -i 's|/var/www/html/tournament_data.json|tournament_data.json|g' scraper_github.py
+          sed -i 's|/home/pi/logs/tournament_monitor.log|scraper.log|g' scraper_github.py
           
+          # Create logs directory
           mkdir -p logs
+          
+          echo "✓ Modified scraper created"
       
-      - name: Run scraper
+      - name: Run tournament scraper
         run: |
-          python3 bankshot_monitor_multi.py || echo "Scraper completed with exit code $?"
+          echo "Starting scraper at $(date)"
+          python3 scraper_github.py 2>&1 | tee scraper_output.log || true
+          echo "Scraper finished at $(date)"
         continue-on-error: true
       
-      - name: Check if data was created
+      - name: Check scraper output
+        run: |
+          echo "=== SCRAPER OUTPUT ==="
+          if [ -f scraper_output.log ]; then
+            cat scraper_output.log
+          fi
+          
+          echo ""
+          echo "=== SCRAPER LOG ==="
+          if [ -f scraper.log ]; then
+            cat scraper.log
+          fi
+      
+      - name: Verify tournament data
         run: |
           if [ -f tournament_data.json ]; then
             echo "✓ Tournament data file created"
+            echo "Contents:"
             cat tournament_data.json
+            
+            # Validate JSON
+            if python3 -m json.tool tournament_data.json > /dev/null 2>&1; then
+              echo "✓ Valid JSON"
+            else
+              echo "✗ Invalid JSON - creating default"
+              echo '{"tournament_name":"No tournaments found","status":null,"display_tournament":false,"last_updated":"'$(date '+%Y-%m-%d %H:%M:%S')'"}' > tournament_data.json
+            fi
           else
-            echo "✗ No tournament data file found"
-            cat > tournament_data.json << EOF
-          {
-            "tournament_name": "No tournaments found",
-            "tournament_url": null,
-            "status": null,
-            "display_tournament": false,
-            "last_updated": "$(TZ=America/New_York date '+%Y-%m-%d %H:%M:%S')",
-            "source": "GitHub Actions scraper"
-          }
-          EOF
+            echo "✗ No tournament data file created"
+            echo "Creating default file..."
+            echo '{"tournament_name":"No tournaments found","status":null,"display_tournament":false,"last_updated":"'$(date '+%Y-%m-%d %H:%M:%S')'"}' > tournament_data.json
           fi
       
-      - name: Commit results
+      - name: Show final data
+        run: |
+          echo "=== FINAL TOURNAMENT DATA ==="
+          cat tournament_data.json | python3 -m json.tool
+      
+      - name: Configure Git
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action Bot"
+      
+      - name: Commit and push changes
+        run: |
+          # Add files
           git add tournament_data.json || true
           git add scraper.log || true
+          git add scraper_output.log || true
           
+          # Check if there are changes
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Update tournament data - $(TZ=America/New_York date '+%Y-%m-%d %H:%M:%S EST')"
+            echo "Changes detected, committing..."
+            git commit -m "Update tournament data - $(date '+%Y-%m-%d %I:%M %p EST')"
+            
+            echo "Pushing to GitHub..."
             git push
+            
+            echo "✓ Changes pushed successfully"
           fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
