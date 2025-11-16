@@ -1,0 +1,58 @@
+name: Scrape Tournaments
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'  # Every 15 minutes
+  workflow_dispatch:  # Manual trigger button
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Install Chrome
+        run: |
+          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+      
+      - name: Install ChromeDriver
+        run: |
+          CHROME_VERSION=$(google-chrome --version | awk '{print $3}' | cut -d '.' -f 1)
+          wget -q "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION}" -O latest
+          DRIVER_VERSION=$(cat latest)
+          wget -q "https://chromedriver.storage.googleapis.com/${DRIVER_VERSION}/chromedriver_linux64.zip"
+          unzip chromedriver_linux64.zip
+          sudo mv chromedriver /usr/local/bin/
+          sudo chmod +x /usr/local/bin/chromedriver
+      
+      - name: Install Python packages
+        run: pip install selenium
+      
+      - name: Run scraper
+        run: |
+          # Modify script to save in current directory
+          sed -i 's|/home/pi/tournament_data.json|tournament_data.json|g' bankshot_monitor_multi.py
+          sed -i 's|/var/www/html/tournament_data.json|tournament_data.json|g' bankshot_monitor_multi.py
+          sed -i 's|/home/pi/logs/tournament_monitor.log|scraper.log|g' bankshot_monitor_multi.py
+          
+          python3 bankshot_monitor_multi.py || echo "Scraper ran"
+      
+      - name: Commit results
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add tournament_data.json || true
+          git add scraper.log || true
+          git commit -m "Update tournament data $(date)" || echo "No changes"
+          git push || echo "Nothing to push"
