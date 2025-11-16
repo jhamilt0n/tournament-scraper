@@ -1,0 +1,23 @@
+[2025-11-16 19:04:46] 
+============================================================
+[2025-11-16 19:04:46] BANKSHOT BILLIARDS TOURNAMENT MONITOR - MULTI-TOURNAMENT
+[2025-11-16 19:04:46] ============================================================
+[2025-11-16 19:04:46] ============================================================
+[2025-11-16 19:04:46] Searching for ALL Bankshot tournaments today...
+[2025-11-16 19:04:46] ============================================================
+[2025-11-16 19:04:56] Waiting for page to load...
+[2025-11-16 19:04:57] ✓ Page loaded
+[2025-11-16 19:05:00] Setting status filter to: All Statuses
+[2025-11-16 19:05:16] ✗ Could not find option: All Statuses
+[2025-11-16 19:05:16] ⚠ Warning: Could not set status filter to 'All Statuses'
+[2025-11-16 19:05:16] Searching for: Bankshot Billiards Hilliard
+[2025-11-16 19:05:21] Waiting for search results...
+[2025-11-16 19:05:33] No tournaments found
+[2025-11-16 19:05:33] No tournaments to display
+[2025-11-16 19:05:33] ✓ Saved to tournament_data.json
+[2025-11-16 19:05:33] ✓ Saved to tournament_data.json
+[2025-11-16 19:05:33] 
+============================================================
+[2025-11-16 19:05:33] MONITOR COMPLETED
+[2025-11-16 19:05:33] ============================================================
+[2025-11-16 19:05:33] ○ No tournament to display
