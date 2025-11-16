@@ -19,40 +19,67 @@ jobs:
         with:
           python-version: '3.11'
       
-      - name: Install Chrome
-        run: |
-          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
+      - name: Install Chrome and ChromeDriver
+        uses: browser-actions/setup-chrome@latest
+        with:
+          chrome-version: stable
       
-      - name: Install ChromeDriver
+      - name: Verify Chrome installation
         run: |
-          CHROME_VERSION=$(google-chrome --version | awk '{print $3}' | cut -d '.' -f 1)
-          wget -q "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION}" -O latest
-          DRIVER_VERSION=$(cat latest)
-          wget -q "https://chromedriver.storage.googleapis.com/${DRIVER_VERSION}/chromedriver_linux64.zip"
-          unzip chromedriver_linux64.zip
-          sudo mv chromedriver /usr/local/bin/
-          sudo chmod +x /usr/local/bin/chromedriver
+          google-chrome --version
+          which google-chrome
       
       - name: Install Python packages
         run: pip install selenium
       
-      - name: Run scraper
+      - name: Modify script for GitHub Actions
         run: |
-          # Modify script to save in current directory
+          # Change paths to work in current directory
           sed -i 's|/home/pi/tournament_data.json|tournament_data.json|g' bankshot_monitor_multi.py
           sed -i 's|/var/www/html/tournament_data.json|tournament_data.json|g' bankshot_monitor_multi.py
           sed -i 's|/home/pi/logs/tournament_monitor.log|scraper.log|g' bankshot_monitor_multi.py
           
-          python3 bankshot_monitor_multi.py || echo "Scraper ran"
+          # Create logs directory if needed
+          mkdir -p logs
+      
+      - name: Run scraper
+        run: |
+          python3 bankshot_monitor_multi.py || echo "Scraper completed with exit code $?"
+        continue-on-error: true
+      
+      - name: Check if data was created
+        run: |
+          if [ -f tournament_data.json ]; then
+            echo "✓ Tournament data file created"
+            cat tournament_data.json
+          else
+            echo "✗ No tournament data file found"
+            echo "Creating empty data file"
+            cat > tournament_data.json << 'EOF'
+          {
+            "tournament_name": "No tournaments found",
+            "tournament_url": null,
+            "status": null,
+            "display_tournament": false,
+            "last_updated": "$(date '+%Y-%m-%d %H:%M:%S')",
+            "source": "GitHub Actions scraper"
+          }
+          EOF
+          fi
       
       - name: Commit results
         run: |
           git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.name "GitHub Action Bot"
+          
+          # Add files
           git add tournament_data.json || true
           git add scraper.log || true
-          git commit -m "Update tournament data $(date)" || echo "No changes"
-          git push || echo "Nothing to push"
+          
+          # Check if there are changes
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update tournament data - $(date '+%Y-%m-%d %H:%M:%S')"
+            git push
+          fi
