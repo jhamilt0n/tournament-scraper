@@ -2,13 +2,17 @@ name: Scrape Tournaments
 
 on:
   schedule:
-    - cron: '*/15 * * * *'  # Every 15 minutes
-  workflow_dispatch:  # Manual trigger button
+    - cron: '*/15 * * * *'  # Every 15 minutes UTC
+  workflow_dispatch:
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    
+    # Set environment variables for timezone
+    env:
+      TZ: America/New_York  # Eastern Time
     
     steps:
       - name: Checkout
@@ -24,22 +28,25 @@ jobs:
         with:
           chrome-version: stable
       
-      - name: Verify Chrome installation
+      - name: Verify timezone
         run: |
-          google-chrome --version
-          which google-chrome
+          echo "Current time (UTC): $(date -u)"
+          echo "Current time (Local): $(date)"
+          echo "Timezone: $TZ"
       
       - name: Install Python packages
-        run: pip install selenium
+        run: pip install selenium pytz
       
       - name: Modify script for GitHub Actions
         run: |
-          # Change paths to work in current directory
+          # Set timezone in script
+          sed -i '1a import os\nos.environ["TZ"] = "America/New_York"' bankshot_monitor_multi.py
+          
+          # Change paths
           sed -i 's|/home/pi/tournament_data.json|tournament_data.json|g' bankshot_monitor_multi.py
           sed -i 's|/var/www/html/tournament_data.json|tournament_data.json|g' bankshot_monitor_multi.py
           sed -i 's|/home/pi/logs/tournament_monitor.log|scraper.log|g' bankshot_monitor_multi.py
           
-          # Create logs directory if needed
           mkdir -p logs
       
       - name: Run scraper
@@ -54,14 +61,13 @@ jobs:
             cat tournament_data.json
           else
             echo "✗ No tournament data file found"
-            echo "Creating empty data file"
-            cat > tournament_data.json << 'EOF'
+            cat > tournament_data.json << EOF
           {
             "tournament_name": "No tournaments found",
             "tournament_url": null,
             "status": null,
             "display_tournament": false,
-            "last_updated": "$(date '+%Y-%m-%d %H:%M:%S')",
+            "last_updated": "$(TZ=America/New_York date '+%Y-%m-%d %H:%M:%S')",
             "source": "GitHub Actions scraper"
           }
           EOF
@@ -71,15 +77,12 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action Bot"
-          
-          # Add files
           git add tournament_data.json || true
           git add scraper.log || true
           
-          # Check if there are changes
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Update tournament data - $(date '+%Y-%m-%d %H:%M:%S')"
+            git commit -m "Update tournament data - $(TZ=America/New_York date '+%Y-%m-%d %H:%M:%S EST')"
             git push
           fi
