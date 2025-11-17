@@ -54,27 +54,28 @@ jobs:
           sed -i 's|/home/pi/logs/tournament_monitor.log|scraper.log|g' scraper_github.py
           
           # Replace ChromeDriver setup with webdriver-manager
-          python3 << 'EOFPYTHON'
-with open('scraper_github.py', 'r') as f:
-    content = f.read()
-
-# Find and replace the setup_driver function's service creation
-old_code = """    try:
-        service = Service(executable_path='/usr/bin/chromedriver')
-        return webdriver.Chrome(service=service, options=chrome_options)"""
-
-new_code = """    try:
-        from webdriver_manager.chrome import ChromeDriverManager
-        service = Service(ChromeDriverManager().install())
-        return webdriver.Chrome(service=service, options=chrome_options)"""
-
-content = content.replace(old_code, new_code)
-
-with open('scraper_github.py', 'w') as f:
-    f.write(content)
-    
-print("✓ Patched scraper to use webdriver-manager")
-EOFPYTHON
+          cat > patch.py << 'EOF'
+          with open('scraper_github.py', 'r') as f:
+              content = f.read()
+          
+          old_code = """    try:
+                  service = Service(executable_path='/usr/bin/chromedriver')
+                  return webdriver.Chrome(service=service, options=chrome_options)"""
+          
+          new_code = """    try:
+                  from webdriver_manager.chrome import ChromeDriverManager
+                  service = Service(ChromeDriverManager().install())
+                  return webdriver.Chrome(service=service, options=chrome_options)"""
+          
+          content = content.replace(old_code, new_code)
+          
+          with open('scraper_github.py', 'w') as f:
+              f.write(content)
+          
+          print("✓ Patched scraper to use webdriver-manager")
+          EOF
+          
+          python3 patch.py
           
           echo "✓ Modified scraper created"
       
