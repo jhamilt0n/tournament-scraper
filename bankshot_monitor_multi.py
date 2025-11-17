@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
 Bankshot Billiards Tournament Monitor - Multi-Tournament Version
+FIXED: Search for just "Bankshot Billiards" not "Bankshot Billiards Hilliard"
 Handles multiple tournaments per day with smart priority logic:
 - Shows first scheduled tournament until later one starts
 - Switches to latest "In Progress" tournament
@@ -79,72 +80,16 @@ def parse_time_string(time_str):
         return None
 
 
-def set_status_filter(driver, status="All Statuses"):
-    """Set the status filter dropdown on DigitalPool"""
-    try:
-        log(f"Setting status filter to: {status}")
-        
-        dropdown_xpath = "/html/body/div[1]/div/div/section/section/section/main/div[2]/div/div[1]/div/div[2]/div/span[2]"
-        
-        try:
-            dropdown = WebDriverWait(driver, 10).until(
-                EC.presence_of_element_located((By.XPATH, dropdown_xpath))
-            )
-        except TimeoutException:
-            # Try alternate selectors
-            selectors = [
-                "//span[contains(@class, 'ant-select-selection-item')]",
-                ".ant-select-selection-item"
-            ]
-            
-            dropdown = None
-            for selector in selectors:
-                try:
-                    if selector.startswith('//'):
-                        dropdown = driver.find_element(By.XPATH, selector)
-                    else:
-                        dropdown = driver.find_element(By.CSS_SELECTOR, selector)
-                    if dropdown:
-                        break
-                except:
-                    continue
-            
-            if not dropdown:
-                log("✗ Could not find status dropdown")
-                return False
-        
-        dropdown.click()
-        time.sleep(1)
-        
-        option_xpath = f"//div[contains(@class, 'ant-select-item')]//div[text()='{status}']"
-        
-        try:
-            option = WebDriverWait(driver, 5).until(
-                EC.element_to_be_clickable((By.XPATH, option_xpath))
-            )
-            option.click()
-            log(f"✓ Selected status: {status}")
-            time.sleep(2)
-            return True
-        except TimeoutException:
-            log(f"✗ Could not find option: {status}")
-            return False
-            
-    except Exception as e:
-        log(f"Error setting status filter: {e}")
-        return False
-
-
-def search_tournaments_by_status(driver, status="All Statuses"):
-    """Search for Bankshot tournaments with specific status filter"""
+def search_tournaments_on_page(driver):
+    """Search for Bankshot tournaments on the current page"""
     tournaments = []
     
     try:
-        # Set status filter
-        if not set_status_filter(driver, status):
-            log(f"⚠ Warning: Could not set status filter to '{status}'")
+        # Search for venue (just name, not city - city in search doesn't work)
+        search_term = VENUE_NAME
+        log(f"Searching for: {search_term}")
         
-        # Find search input
+        # Find and use search input
         search_input = None
         selectors = [
             "input.ant-input",
@@ -170,10 +115,6 @@ def search_tournaments_by_status(driver, status="All Statuses"):
             log("✗ Could not find search input")
             return []
         
-        # Search for venue
-        search_term = f"{VENUE_NAME} {VENUE_CITY}"
-        log(f"Searching for: {search_term}")
-        
         search_input.click()
         time.sleep(0.5)
         search_input.clear()
@@ -191,6 +132,7 @@ def search_tournaments_by_status(driver, status="All Statuses"):
         log("Waiting for search results...")
         time.sleep(8)
         
+        # Scroll to load all content
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         time.sleep(2)
         driver.execute_script("window.scrollTo(0, 0);")
@@ -200,19 +142,34 @@ def search_tournaments_by_status(driver, status="All Statuses"):
         body_text = driver.find_element(By.TAG_NAME, "body").text
         lines = body_text.split('\n')
         
+        log(f"Checking {len(lines)} lines for tournament info...")
+        log(f"Looking for: '{VENUE_NAME}' with city '{VENUE_CITY}'")
+        
+        # Count how many times we find the venue
+        venue_mentions = 0
+        for line in lines:
+            if VENUE_NAME in line:
+                venue_mentions += 1
+        
+        log(f"Found {venue_mentions} mentions of {VENUE_NAME}")
+        
         # Look for tournaments
         for i, line in enumerate(lines):
             line = line.strip()
             
-            if VENUE_NAME in line and VENUE_CITY in line:
-                context_lines = lines[max(0, i-5):min(len(lines), i+10)]
+            # First check if line contains venue name
+            if VENUE_NAME in line:
+                # Get more context to check for city
+                context_lines = lines[max(0, i-5):min(len(lines), i+15)]
                 context = '\n'.join(context_lines)
                 
-                # Check if status matches
-                status_found = status in context or status == "All Statuses"
-                
-                if not status_found:
+                # Verify this is the Hilliard location (not another Bankshot location)
+                if VENUE_CITY not in context:
+                    log(f"Skipping - found {VENUE_NAME} but not in {VENUE_CITY}")
                     continue
+                
+                log(f"Found venue mention at line {i}: {line}")
+                log(f"Context around match:\n{context}\n")
                 
                 # Extract info
                 date_match = re.search(r'(\d{4}/\d{2}/\d{2})', context)
@@ -232,7 +189,7 @@ def search_tournaments_by_status(driver, status="All Statuses"):
                 if not tournament_name:
                     tournament_name = f"Tournament at {VENUE_NAME}"
                 
-                # Determine actual status
+                # Determine status
                 actual_status = "Unknown"
                 if "In Progress" in context:
                     actual_status = "In Progress"
@@ -264,6 +221,9 @@ def search_tournaments_by_status(driver, status="All Statuses"):
                 log(f"✓ Found tournament: {tournament_name}")
                 log(f"  Date: {tournament_date}, Time: {start_time_str}, Status: {actual_status}")
         
+        if not tournaments:
+            log("✗ No tournaments found for Hilliard location")
+        
         return tournaments
         
     except Exception as e:
@@ -274,7 +234,7 @@ def search_tournaments_by_status(driver, status="All Statuses"):
 
 
 def get_all_todays_tournaments():
-    """Get all tournaments at Bankshot for today (any status)"""
+    """Get all tournaments at Bankshot for today"""
     driver = None
     
     try:
@@ -297,8 +257,9 @@ def get_all_todays_tournaments():
         
         time.sleep(3)
         
-        # Get all tournaments
-        all_tournaments = search_tournaments_by_status(driver, "All Statuses")
+        # Don't worry about status filter - just search
+        log("Skipping status filter (will search all visible tournaments)")
+        all_tournaments = search_tournaments_on_page(driver)
         
         if not all_tournaments:
             log("No tournaments found")
@@ -314,7 +275,6 @@ def get_all_todays_tournaments():
         log(f"Found {len(todays_tournaments)} tournament(s) for today ({today_str})")
         log(f"{'='*60}")
         
-        # Sort by start time
         for t in todays_tournaments:
             log(f"\n  Tournament: {t['name']}")
             log(f"  Start time: {t['start_time']}")
@@ -324,6 +284,8 @@ def get_all_todays_tournaments():
         
     except Exception as e:
         log(f"Error: {e}")
+        import traceback
+        traceback.print_exc()
         return []
     finally:
         if driver:
