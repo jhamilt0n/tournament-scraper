@@ -85,7 +85,7 @@ def search_tournaments_on_page(driver):
     tournaments = []
     
     try:
-        # Search for venue (just name, not city - city in search doesn't work)
+        # FIXED: Search for venue (just name, not city - city in search doesn't work)
         search_term = VENUE_NAME
         log(f"Searching for: {search_term}")
         
@@ -163,7 +163,7 @@ def search_tournaments_on_page(driver):
                 context_lines = lines[max(0, i-5):min(len(lines), i+15)]
                 context = '\n'.join(context_lines)
                 
-                # Verify this is the Hilliard location (not another Bankshot location)
+                # FIXED: Verify this is the Hilliard location (not another Bankshot location)
                 if VENUE_CITY not in context:
                     log(f"Skipping - found {VENUE_NAME} but not in {VENUE_CITY}")
                     continue
