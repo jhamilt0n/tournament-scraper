@@ -161,13 +161,11 @@ jobs:
           echo "=== FINAL TOURNAMENT DATA ==="
           cat tournament_data.json | python3 -m json.tool
       
-      - name: Configure Git
+      - name: Commit and push changes (simple)
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action Bot"
-      
-      - name: Commit and push changes
-        run: |
+          
           # Add files
           git add tournament_data.json || true
           git add scraper.log || true
@@ -176,14 +174,24 @@ jobs:
           # Check if there are changes
           if git diff --staged --quiet; then
             echo "No changes to commit"
-          else
-            echo "Changes detected, committing..."
-            git commit -m "Update tournament data - $(date '+%Y-%m-%d %I:%M %p EST')"
-            
-            echo "Pushing to GitHub..."
-            git push
-            
-            echo "✓ Changes pushed successfully"
+            exit 0
           fi
+          
+          # Commit
+          echo "Changes detected, committing..."
+          git commit -m "Update tournament data - $(date '+%Y-%m-%d %I:%M %p EST')" || {
+            echo "Nothing to commit"
+            exit 0
+          }
+          
+          # Push with force-with-lease (safer than force, won't overwrite others' work)
+          echo "Pushing to GitHub..."
+          git push --force-with-lease origin main || {
+            echo "⚠ Push failed, this is normal when multiple runs overlap"
+            echo "The next run will pick up any changes"
+            exit 0
+          }
+          
+          echo "✓ Changes pushed successfully"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
