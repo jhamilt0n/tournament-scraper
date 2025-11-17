@@ -1,0 +1,109 @@
+# Tournament Scraper for Bankshot Billiards
+
+This repository automatically scrapes tournament data from DigitalPool.com for Bankshot Billiards in Hilliard, OH.
+
+## Files in this Repository
+
+1. **tournament_monitor.py** - The main scraper script
+2. **.github/workflows/scrape.yml** - GitHub Actions workflow that runs every 15 minutes
+3. **tournament_data.json** - The output file with current tournament data
+
+## How It Works
+
+1. GitHub Actions runs the scraper every 15 minutes
+2. The scraper searches DigitalPool.com for tournaments at Bankshot Billiards, Hilliard
+3. If a tournament is found and "In Progress", the data is saved
+4. The JSON file is committed back to the repository
+5. Your Raspberry Pi downloads this file periodically
+
+## Setup Instructions
+
+### 1. Upload Files to GitHub
+
+Upload these files to your `jhamilt0n/tournament-scraper` repository:
+
+- `tournament_monitor.py` (the fixed scraper)
+- `.github/workflows/scrape.yml` (the workflow file)
+
+### 2. Enable GitHub Actions
+
+1. Go to your repository on GitHub
+2. Click the "Actions" tab
+3. If prompted, click "I understand my workflows, go ahead and enable them"
+
+### 3. Test the Workflow
+
+1. Go to Actions tab
+2. Click "Scrape Tournaments" workflow
+3. Click "Run workflow" dropdown
+4. Click "Run workflow" button
+5. Wait for it to complete and check the logs
+
+### 4. Verify on Your Raspberry Pi
+
+Your existing bash script should continue working:
+```bash
+#!/bin/bash
+GITHUB_USER="jhamilt0n"
+GITHUB_REPO="tournament-scraper"
+URL="https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/main/tournament_data.json"
+curl -s -f -o /tmp/tournament_data.json "$URL"
+if [ $? -eq 0 ] && [ -f /tmp/tournament_data.json ]; then
+    cp /tmp/tournament_data.json /home/pi/tournament_data.json
+    sudo cp /tmp/tournament_data.json /var/www/html/tournament_data.json
+    echo "$(date): ✓ Downloaded tournament data" >> /home/pi/logs/download.log
+else
+    echo "$(date): ✗ Failed to download" >> /home/pi/logs/download.log
+fi
+```
+
+## What Was Fixed
+
+**Problem:** The scraper was searching for "Bankshot Billiards Hilliard" which returned no results on DigitalPool.com
+
+**Solution:** 
+- Changed search to just "Bankshot Billiards"
+- Added verification to ensure results are from the Hilliard location
+- Script now finds tournaments correctly
+
+## Tournament Data Format
+
+```json
+{
+  "tournament_name": "Sunday 9-Ball Tournament",
+  "tournament_url": "https://digitalpool.com/tournaments/20251117-sunday-9-ball-tournament/",
+  "venue": "Bankshot Billiards, Hilliard",
+  "date": "2025/11/17",
+  "start_time": "7:00 PM",
+  "status": "In Progress",
+  "payout_data": "payouts15.json",
+  "last_updated": "2025-11-17 19:30:00",
+  "display_tournament": true
+}
+```
+
+## Troubleshooting
+
+### No tournaments showing up
+- Check the Actions logs to see what the scraper found
+- Verify the tournament exists on https://www.digitalpool.com/tournaments
+- Search manually for "Bankshot Billiards" to confirm
+
+### GitHub Actions failing
+- Check the Actions tab for error logs
+- Make sure `tournament_monitor.py` is in the root of the repository
+- Verify the workflow file is at `.github/workflows/scrape.yml`
+
+### Raspberry Pi not getting updates
+- Check your download script is running (cron job)
+- Verify you can access the raw GitHub URL in a browser
+- Check `/home/pi/logs/download.log` for errors
+
+## Schedule
+
+The scraper runs every 15 minutes automatically via GitHub Actions.
+
+You can also trigger it manually:
+1. Go to Actions tab
+2. Select "Scrape Tournaments"
+3. Click "Run workflow"
