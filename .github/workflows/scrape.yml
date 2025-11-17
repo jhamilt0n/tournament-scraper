@@ -90,9 +90,9 @@ jobs:
       
       - name: Check if scraper exists
         run: |
-          if [ -f tournament_monitor.py ]; then
-            echo "✓ Scraper file found: tournament_monitor.py"
-            wc -l tournament_monitor.py
+          if [ -f bankshot_monitor_multi.py ]; then
+            echo "✓ Scraper file found: bankshot_monitor_multi.py"
+            wc -l bankshot_monitor_multi.py
           else
             echo "✗ Scraper file NOT found!"
             echo "Files in directory:"
@@ -103,7 +103,7 @@ jobs:
       - name: Modify scraper for GitHub Actions
         run: |
           # Create a modified version
-          cp tournament_monitor.py scraper_github.py
+          cp bankshot_monitor_multi.py scraper_github.py
           
           # Change paths for GitHub Actions environment
           sed -i 's|/home/pi/tournament_data.json|tournament_data.json|g' scraper_github.py
