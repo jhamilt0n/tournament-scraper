@@ -1,23 +1,23 @@
-[2025-11-17 04:19:20] 
+[2025-11-17 04:43:58] 
 ============================================================
-[2025-11-17 04:19:20] BANKSHOT BILLIARDS TOURNAMENT MONITOR - MULTI-TOURNAMENT
-[2025-11-17 04:19:20] ============================================================
-[2025-11-17 04:19:20] ============================================================
-[2025-11-17 04:19:20] Searching for ALL Bankshot tournaments today...
-[2025-11-17 04:19:20] ============================================================
-[2025-11-17 04:19:31] Waiting for page to load...
-[2025-11-17 04:19:32] ✓ Page loaded
-[2025-11-17 04:19:35] Setting status filter to: All Statuses
-[2025-11-17 04:19:51] ✗ Could not find option: All Statuses
-[2025-11-17 04:19:51] ⚠ Warning: Could not set status filter to 'All Statuses'
-[2025-11-17 04:19:51] Searching for: Bankshot Billiards Hilliard
-[2025-11-17 04:19:56] Waiting for search results...
-[2025-11-17 04:20:08] No tournaments found
-[2025-11-17 04:20:08] No tournaments to display
-[2025-11-17 04:20:08] ✓ Saved to tournament_data.json
-[2025-11-17 04:20:08] ✓ Saved to tournament_data.json
-[2025-11-17 04:20:08] 
+[2025-11-17 04:43:58] BANKSHOT BILLIARDS TOURNAMENT MONITOR - MULTI-TOURNAMENT
+[2025-11-17 04:43:58] ============================================================
+[2025-11-17 04:43:58] ============================================================
+[2025-11-17 04:43:58] Searching for ALL Bankshot tournaments today...
+[2025-11-17 04:43:58] ============================================================
+[2025-11-17 04:44:23] Waiting for page to load...
+[2025-11-17 04:44:24] ✓ Page loaded
+[2025-11-17 04:44:27] Setting status filter to: All Statuses
+[2025-11-17 04:44:43] ✗ Could not find option: All Statuses
+[2025-11-17 04:44:43] ⚠ Warning: Could not set status filter to 'All Statuses'
+[2025-11-17 04:44:43] Searching for: Bankshot Billiards Hilliard
+[2025-11-17 04:44:48] Waiting for search results...
+[2025-11-17 04:45:00] No tournaments found
+[2025-11-17 04:45:00] No tournaments to display
+[2025-11-17 04:45:00] ✓ Saved to tournament_data.json
+[2025-11-17 04:45:00] ✓ Saved to tournament_data.json
+[2025-11-17 04:45:00] 
 ============================================================
-[2025-11-17 04:20:08] MONITOR COMPLETED
-[2025-11-17 04:20:08] ============================================================
-[2025-11-17 04:20:08] ○ No tournament to display
+[2025-11-17 04:45:00] MONITOR COMPLETED
+[2025-11-17 04:45:00] ============================================================
+[2025-11-17 04:45:00] ○ No tournament to display
