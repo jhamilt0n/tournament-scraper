@@ -161,7 +161,7 @@ jobs:
           echo "=== FINAL TOURNAMENT DATA ==="
           cat tournament_data.json | python3 -m json.tool
       
-      - name: Commit and push changes (simple)
+      - name: Commit and push changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action Bot"
@@ -184,14 +184,17 @@ jobs:
             exit 0
           }
           
-          # Push with force-with-lease (safer than force, won't overwrite others' work)
+          # Push with force-with-lease and handle race conditions gracefully
           echo "Pushing to GitHub..."
-          git push --force-with-lease origin main || {
-            echo "⚠ Push failed, this is normal when multiple runs overlap"
+          if git push --force-with-lease origin main; then
+            echo "✓ Changes pushed successfully"
+          else
+            echo "⚠ Push failed - likely a race condition with another workflow run"
+            echo "This is normal when multiple runs finish at the same time"
             echo "The next run will pick up any changes"
-            exit 0
-          }
+          fi
           
-          echo "✓ Changes pushed successfully"
+          # Always exit 0 so workflow shows as successful
+          exit 0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
