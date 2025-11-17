@@ -1,0 +1,189 @@
+# SETUP GUIDE - Tournament Scraper Fix
+
+## What Was Wrong
+
+Your tournament scraper wasn't finding any tournaments because:
+1. It was searching for "Bankshot Billiards Hilliard" (full name + city)
+2. DigitalPool.com's search doesn't work with the city included
+3. Searching for just "Bankshot Billiards" works fine
+
+## The Fix
+
+Changed the search from:
+```python
+search_term = f"{VENUE_NAME} {VENUE_CITY}"  # "Bankshot Billiards Hilliard" ❌
+```
+
+To:
+```python
+search_term = VENUE_NAME  # "Bankshot Billiards" ✅
+```
+
+Then added verification to ensure it's the Hilliard location.
+
+## Files to Upload to GitHub
+
+Upload these 3 files to your `jhamilt0n/tournament-scraper` repository:
+
+### 1. tournament_monitor.py
+- Location: Root of repository
+- This is the fixed scraper script
+- **Download from:** tournament_monitor.py (provided)
+
+### 2. .github/workflows/scrape.yml
+- Location: Create `.github/workflows/` folder, put file inside
+- This runs the scraper every 15 minutes
+- **Download from:** scrape.yml (provided)
+
+### 3. README.md (optional)
+- Location: Root of repository
+- Documentation for the repository
+- **Download from:** README.md (provided)
+
+## Step-by-Step Upload Instructions
+
+### Option A: Via GitHub Website
+
+1. Go to https://github.com/jhamilt0n/tournament-scraper
+
+2. **Upload tournament_monitor.py:**
+   - Click "Add file" → "Upload files"
+   - Drag `tournament_monitor.py` 
+   - Click "Commit changes"
+
+3. **Create workflow file:**
+   - Click "Add file" → "Create new file"
+   - Type: `.github/workflows/scrape.yml`
+   - Paste the contents of scrape.yml
+   - Click "Commit changes"
+
+4. **Enable Actions:**
+   - Click "Actions" tab
+   - Click "I understand my workflows, go ahead and enable them"
+
+5. **Test it:**
+   - Click "Scrape Tournaments"
+   - Click "Run workflow" → "Run workflow"
+   - Wait for it to complete (green checkmark)
+   - Check if `tournament_data.json` was created
+
+### Option B: Via Git Command Line
+
+```bash
+cd /path/to/local/repo
+git clone https://github.com/jhamilt0n/tournament-scraper.git
+cd tournament-scraper
+
+# Copy the fixed files
+cp /path/to/downloaded/tournament_monitor.py .
+mkdir -p .github/workflows
+cp /path/to/downloaded/scrape.yml .github/workflows/
+
+# Commit and push
+git add .
+git commit -m "Fix: Search for 'Bankshot Billiards' instead of 'Bankshot Billiards Hilliard'"
+git push
+```
+
+## Verify It's Working
+
+### On GitHub:
+1. Go to Actions tab
+2. You should see workflow runs every 15 minutes
+3. Click on a run to see logs
+4. Look for "✓ Found tournament" messages
+5. Check that `tournament_data.json` is being updated
+
+### On Your Raspberry Pi:
+Your download script should continue working as-is:
+```bash
+# Your existing script - NO CHANGES NEEDED
+curl -s -f -o /tmp/tournament_data.json \
+  "https://raw.githubusercontent.com/jhamilt0n/tournament-scraper/main/tournament_data.json"
+```
+
+## Expected Behavior
+
+**When NO tournament is in progress:**
+```json
+{
+  "tournament_name": "No tournaments to display",
+  "display_tournament": false,
+  "status": null,
+  "last_updated": "2025-11-17 13:30:00"
+}
+```
+
+**When tournament is found but not started (Upcoming):**
+```json
+{
+  "tournament_name": "Sunday 9-Ball Tournament",
+  "status": "Upcoming",
+  "display_tournament": false,  ← Won't display yet
+  "start_time": "7:00 PM",
+  "last_updated": "2025-11-17 18:30:00"
+}
+```
+
+**When tournament is IN PROGRESS:**
+```json
+{
+  "tournament_name": "Sunday 9-Ball Tournament",
+  "tournament_url": "https://digitalpool.com/tournaments/...",
+  "venue": "Bankshot Billiards, Hilliard",
+  "status": "In Progress",
+  "display_tournament": true,  ← NOW it displays!
+  "date": "2025/11/17",
+  "start_time": "7:00 PM",
+  "payout_data": "payouts15.json",
+  "last_updated": "2025-11-17 19:30:00"
+}
+```
+
+## Troubleshooting
+
+### "No tournaments found" in logs
+- Verify tournament exists at https://www.digitalpool.com/tournaments
+- Search manually for "Bankshot Billiards"
+- Check the Actions log to see what the scraper is seeing
+
+### GitHub Actions not running
+- Make sure Actions are enabled (Settings → Actions → Allow all actions)
+- Check the workflow file is at `.github/workflows/scrape.yml`
+- Check for YAML syntax errors
+
+### Raspberry Pi not getting updates
+- Make sure your cron job is running
+- Check `/home/pi/logs/download.log`
+- Test the curl command manually
+
+### Tournament found but not displaying
+- This is NORMAL if status is "Upcoming" 
+- It will only display when status = "In Progress"
+- The scraper will update every 15 minutes
+
+## Quick Test
+
+Run this manually on your Raspberry Pi to test the GitHub download:
+```bash
+curl -s "https://raw.githubusercontent.com/jhamilt0n/tournament-scraper/main/tournament_data.json" | python3 -m json.tool
+```
+
+This should show the current tournament data.
+
+## Summary
+
+1. ✅ Fixed search term (removed "Hilliard" from search)
+2. ✅ Scraper now finds tournaments correctly
+3. ✅ GitHub Actions runs every 15 minutes
+4. ✅ Raspberry Pi downloads as before (no changes needed)
+5. ✅ Tournament displays when status = "In Progress"
+
+## Files Provided
+
+1. **tournament_monitor.py** - Fixed scraper script
+2. **scrape.yml** - GitHub Actions workflow  
+3. **README.md** - Repository documentation
+4. **SETUP_GUIDE.md** - This file
+
+Upload these to your GitHub repository and you're done!
