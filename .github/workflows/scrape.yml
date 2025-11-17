@@ -1,4 +1,4 @@
-name:  Scrape Tournaments 
+name: Scrape Tournaments
 
 on:
   schedule:
