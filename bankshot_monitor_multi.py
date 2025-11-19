@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Bankshot Billiards Tournament Monitor - Multi-Tournament Version
-FIXED: Search for just "Bankshot Billiards" not "Bankshot Billiards Hilliard"
+FIXED: Uses DOM element parsing instead of text parsing to properly capture tournament data
 Handles multiple tournaments per day with smart priority logic:
 - Shows first scheduled tournament until later one starts
 - Switches to latest "In Progress" tournament
@@ -81,11 +81,11 @@ def parse_time_string(time_str):
 
 
 def search_tournaments_on_page(driver):
-    """Search for Bankshot tournaments on the current page"""
+    """Search for Bankshot tournaments on the current page using DOM parsing"""
     tournaments = []
     
     try:
-        # FIXED: Search for venue (just name, not city - city in search doesn't work)
+        # Search for venue
         search_term = VENUE_NAME
         log(f"Searching for: {search_term}")
         
@@ -138,73 +138,158 @@ def search_tournaments_on_page(driver):
         driver.execute_script("window.scrollTo(0, 0);")
         time.sleep(2)
         
-        # Get page text
-        body_text = driver.find_element(By.TAG_NAME, "body").text
-        lines = body_text.split('\n')
+        # DEBUG: Save page source for inspection
+        try:
+            with open('/tmp/digitalpool_page.html', 'w', encoding='utf-8') as f:
+                f.write(driver.page_source)
+            log("Saved page source to /tmp/digitalpool_page.html for debugging")
+        except:
+            pass
         
-        log(f"Checking {len(lines)} lines for tournament info...")
-        log(f"Looking for: '{VENUE_NAME}' with city '{VENUE_CITY}'")
+        # Try multiple selector strategies to find tournament cards
+        card_selectors = [
+            ".ant-card",
+            "[class*='tournament']",
+            "[class*='TournamentCard']",
+            ".card",
+            "div[class*='Card']"
+        ]
         
-        # Count how many times we find the venue
-        venue_mentions = 0
-        for line in lines:
-            if VENUE_NAME in line:
-                venue_mentions += 1
+        tournament_cards = []
+        for selector in card_selectors:
+            try:
+                cards = driver.find_elements(By.CSS_SELECTOR, selector)
+                if cards:
+                    log(f"Found {len(cards)} elements with selector: {selector}")
+                    tournament_cards = cards
+                    break
+            except:
+                continue
         
-        log(f"Found {venue_mentions} mentions of {VENUE_NAME}")
+        if not tournament_cards:
+            log("Could not find tournament cards with standard selectors, trying alternative approach...")
+            # Fallback: look for any div that contains both venue and date pattern
+            all_divs = driver.find_elements(By.TAG_NAME, "div")
+            tournament_cards = [div for div in all_divs 
+                              if VENUE_NAME in div.text and re.search(r'\d{4}/\d{2}/\d{2}', div.text)]
+            log(f"Found {len(tournament_cards)} potential tournament divs with venue and date")
         
-        # Look for tournaments
-        for i, line in enumerate(lines):
-            line = line.strip()
-            
-            # First check if line contains venue name
-            if VENUE_NAME in line:
-                # Get more context to check for city
-                context_lines = lines[max(0, i-5):min(len(lines), i+15)]
-                context = '\n'.join(context_lines)
+        log(f"Processing {len(tournament_cards)} potential tournament cards")
+        
+        for idx, card in enumerate(tournament_cards):
+            try:
+                card_text = card.text
                 
-                # FIXED: Verify this is the Hilliard location (not another Bankshot location)
-                if VENUE_CITY not in context:
-                    log(f"Skipping - found {VENUE_NAME} but not in {VENUE_CITY}")
+                # Check if this card is for Bankshot Billiards in Hilliard
+                if VENUE_NAME not in card_text:
                     continue
                 
-                log(f"Found venue mention at line {i}: {line}")
-                log(f"Context around match:\n{context}\n")
+                if VENUE_CITY not in card_text:
+                    log(f"Card {idx}: Found {VENUE_NAME} but not in {VENUE_CITY}, skipping")
+                    continue
                 
-                # Extract info
-                date_match = re.search(r'(\d{4}/\d{2}/\d{2})', context)
-                tournament_date = date_match.group(1) if date_match else None
+                log(f"\n{'='*50}")
+                log(f"Card {idx} - Found matching venue!")
+                log(f"{'='*50}")
+                log(f"Card text:\n{card_text}\n")
                 
-                time_match = re.search(r'(\d{1,2}:\d{2}\s*[AP]M)', context, re.IGNORECASE)
-                start_time_str = time_match.group(1) if time_match else None
-                start_time = parse_time_string(start_time_str) if start_time_str else None
-                
-                # Find tournament name
+                # Extract tournament name - try multiple strategies
                 tournament_name = None
-                for ctx_line in context_lines:
-                    if 'tournament' in ctx_line.lower() and VENUE_NAME not in ctx_line:
-                        tournament_name = ctx_line.strip()
-                        break
+                
+                # Strategy 1: Look for heading elements
+                for tag in ['h1', 'h2', 'h3', 'h4', 'h5']:
+                    try:
+                        heading = card.find_element(By.TAG_NAME, tag)
+                        if heading.text and heading.text.strip() and VENUE_NAME not in heading.text:
+                            tournament_name = heading.text.strip()
+                            log(f"Found name in {tag}: {tournament_name}")
+                            break
+                    except:
+                        continue
+                
+                # Strategy 2: Look for elements with 'title' class
+                if not tournament_name:
+                    try:
+                        title_elem = card.find_element(By.CSS_SELECTOR, "[class*='title'], [class*='Title'], [class*='name'], [class*='Name']")
+                        if title_elem.text and title_elem.text.strip():
+                            tournament_name = title_elem.text.strip()
+                            log(f"Found name in title element: {tournament_name}")
+                    except:
+                        pass
+                
+                # Strategy 3: Look for first meaningful text line
+                if not tournament_name:
+                    lines = card_text.split('\n')
+                    for line in lines:
+                        line = line.strip()
+                        if (line and 
+                            len(line) > 5 and 
+                            VENUE_NAME not in line and
+                            VENUE_CITY not in line and
+                            not re.match(r'^\d{4}/\d{2}/\d{2}', line) and
+                            'Showing tournaments' not in line):
+                            tournament_name = line
+                            log(f"Found name from text parsing: {tournament_name}")
+                            break
                 
                 if not tournament_name:
                     tournament_name = f"Tournament at {VENUE_NAME}"
+                    log(f"Using default name: {tournament_name}")
                 
-                # Determine status
+                # Extract date
+                date_match = re.search(r'(\d{4}/\d{2}/\d{2})', card_text)
+                tournament_date = date_match.group(1) if date_match else None
+                log(f"Date: {tournament_date}")
+                
+                # Extract time - try multiple formats and patterns
+                start_time_str = None
+                time_patterns = [
+                    r'(\d{1,2}:\d{2}\s*[AP]\.?M\.?)',  # 7:00 PM, 7:00PM, 7:00 P.M.
+                    r'(\d{1,2}\s*[AP]\.?M\.?)',         # 7 PM, 7PM, 7 P.M.
+                    r'Start[:\s]+(\d{1,2}:\d{2}\s*[AP]\.?M\.?)',  # Start: 7:00 PM
+                    r'Time[:\s]+(\d{1,2}:\d{2}\s*[AP]\.?M\.?)',   # Time: 7:00 PM
+                ]
+                
+                for pattern in time_patterns:
+                    time_match = re.search(pattern, card_text, re.IGNORECASE)
+                    if time_match:
+                        start_time_str = time_match.group(1).strip()
+                        log(f"Found time with pattern '{pattern}': {start_time_str}")
+                        break
+                
+                if not start_time_str:
+                    log("No start time found in card text")
+                
+                start_time = parse_time_string(start_time_str) if start_time_str else None
+                
+                # Extract status
                 actual_status = "Unknown"
-                if "In Progress" in context:
-                    actual_status = "In Progress"
-                elif "Upcoming" in context:
-                    actual_status = "Upcoming"
-                elif "Completed" in context:
-                    actual_status = "Completed"
+                status_indicators = {
+                    "In Progress": ["In Progress", "Live", "Active", "Playing"],
+                    "Upcoming": ["Upcoming", "Scheduled", "Future"],
+                    "Completed": ["Completed", "Finished", "Final", "Ended"]
+                }
                 
-                # Construct URL
+                for status, keywords in status_indicators.items():
+                    if any(keyword in card_text for keyword in keywords):
+                        actual_status = status
+                        log(f"Status: {actual_status}")
+                        break
+                
+                # Get tournament URL from link element
                 tournament_url = None
-                if tournament_date and tournament_name:
-                    date_no_slashes = tournament_date.replace('/', '')
-                    name_slug = re.sub(r'[^a-z0-9-]', '', tournament_name.lower().replace(' ', '-'))
-                    name_slug = re.sub(r'-+', '-', name_slug).strip('-')
-                    tournament_url = f"https://digitalpool.com/tournaments/{date_no_slashes}-{name_slug}/"
+                try:
+                    link_element = card.find_element(By.CSS_SELECTOR, "a[href*='/tournaments/']")
+                    tournament_url = link_element.get_attribute('href')
+                    log(f"URL: {tournament_url}")
+                except:
+                    # Fallback: construct URL
+                    if tournament_date and tournament_name:
+                        date_no_slashes = tournament_date.replace('/', '')
+                        name_slug = re.sub(r'[^a-z0-9-]', '', tournament_name.lower().replace(' ', '-'))
+                        name_slug = re.sub(r'-+', '-', name_slug).strip('-')
+                        tournament_url = f"https://digitalpool.com/tournaments/{date_no_slashes}-{name_slug}/"
+                        log(f"Constructed URL: {tournament_url}")
                 
                 tournament_info = {
                     'name': tournament_name,
@@ -218,11 +303,22 @@ def search_tournaments_on_page(driver):
                 }
                 
                 tournaments.append(tournament_info)
-                log(f"✓ Found tournament: {tournament_name}")
-                log(f"  Date: {tournament_date}, Time: {start_time_str}, Status: {actual_status}")
+                log(f"✓ Successfully extracted tournament info")
+                log(f"  Name: {tournament_name}")
+                log(f"  Date: {tournament_date}")
+                log(f"  Time: {start_time_str}")
+                log(f"  Status: {actual_status}")
+                
+            except Exception as e:
+                log(f"Error parsing tournament card {idx}: {e}")
+                import traceback
+                log(traceback.format_exc())
+                continue
         
         if not tournaments:
             log("✗ No tournaments found for Hilliard location")
+        else:
+            log(f"\n✓ Found {len(tournaments)} tournament(s) total")
         
         return tournaments
         
@@ -257,8 +353,8 @@ def get_all_todays_tournaments():
         
         time.sleep(3)
         
-        # Don't worry about status filter - just search
-        log("Skipping status filter (will search all visible tournaments)")
+        # Search for tournaments
+        log("Searching for tournaments...")
         all_tournaments = search_tournaments_on_page(driver)
         
         if not all_tournaments:
