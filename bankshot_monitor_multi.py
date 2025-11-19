@@ -176,9 +176,34 @@ def search_tournaments_on_page(driver):
         
         log(f"Processing {len(tournament_cards)} potential tournament cards")
         
+        # DEBUG: Save all card HTML and text for inspection
+        debug_dir = "/tmp/tournament_debug"
+        try:
+            import os
+            os.makedirs(debug_dir, exist_ok=True)
+            log(f"Created debug directory: {debug_dir}")
+        except:
+            debug_dir = None
+        
         for idx, card in enumerate(tournament_cards):
             try:
                 card_text = card.text
+                
+                # DEBUG: Save this card's HTML and text
+                if debug_dir:
+                    try:
+                        # Save HTML
+                        card_html = card.get_attribute('outerHTML')
+                        with open(f"{debug_dir}/card_{idx}_html.html", 'w', encoding='utf-8') as f:
+                            f.write(card_html)
+                        
+                        # Save text
+                        with open(f"{debug_dir}/card_{idx}_text.txt", 'w', encoding='utf-8') as f:
+                            f.write(card_text)
+                        
+                        log(f"Saved card {idx} debug files")
+                    except Exception as e:
+                        log(f"Could not save debug for card {idx}: {e}")
                 
                 # Check if this card is for Bankshot Billiards in Hilliard
                 if VENUE_NAME not in card_text:
@@ -192,6 +217,15 @@ def search_tournaments_on_page(driver):
                 log(f"Card {idx} - Found matching venue!")
                 log(f"{'='*50}")
                 log(f"Card text:\n{card_text}\n")
+                
+                # DEBUG: Mark this as the matching card
+                if debug_dir:
+                    try:
+                        with open(f"{debug_dir}/MATCHING_CARD_{idx}.txt", 'w') as f:
+                            f.write(f"This is the matching tournament card!\n\n{card_text}")
+                        log(f"★ Marked card {idx} as MATCHING CARD")
+                    except:
+                        pass
                 
                 # Extract tournament name - try multiple strategies
                 tournament_name = None
@@ -374,6 +408,56 @@ def search_tournaments_on_page(driver):
             log("✗ No tournaments found for Hilliard location")
         else:
             log(f"\n✓ Found {len(tournaments)} tournament(s) total")
+        
+        # DEBUG: Create summary report
+        if debug_dir:
+            try:
+                summary_file = f"{debug_dir}/DEBUG_SUMMARY.txt"
+                with open(summary_file, 'w', encoding='utf-8') as f:
+                    f.write("="*60 + "\n")
+                    f.write("TOURNAMENT SCRAPER DEBUG SUMMARY\n")
+                    f.write("="*60 + "\n\n")
+                    f.write(f"Search Term: {search_term}\n")
+                    f.write(f"Total Cards Found: {len(tournament_cards)}\n")
+                    f.write(f"Matching Tournaments: {len(tournaments)}\n\n")
+                    
+                    f.write("FILES SAVED:\n")
+                    f.write(f"- Full page HTML: /tmp/digitalpool_page.html\n")
+                    f.write(f"- Card HTML files: {debug_dir}/card_*_html.html\n")
+                    f.write(f"- Card text files: {debug_dir}/card_*_text.txt\n")
+                    f.write(f"- Matching cards: {debug_dir}/MATCHING_CARD_*.txt\n\n")
+                    
+                    if tournaments:
+                        f.write("TOURNAMENTS FOUND:\n")
+                        f.write("-"*60 + "\n")
+                        for i, t in enumerate(tournaments, 1):
+                            f.write(f"\nTournament {i}:\n")
+                            f.write(f"  Name: {t['name']}\n")
+                            f.write(f"  Venue: {t['venue']}\n")
+                            f.write(f"  Date: {t['date']}\n")
+                            f.write(f"  Start Time: {t['start_time']}\n")
+                            f.write(f"  Status: {t['status']}\n")
+                            f.write(f"  URL: {t['url']}\n")
+                    else:
+                        f.write("NO TOURNAMENTS FOUND\n")
+                        f.write("\nPossible reasons:\n")
+                        f.write("- Venue name/city not matching in card text\n")
+                        f.write("- Cards not being detected properly\n")
+                        f.write("- Check the card HTML/text files to see what data is available\n")
+                    
+                    f.write("\n" + "="*60 + "\n")
+                    f.write("NEXT STEPS:\n")
+                    f.write("="*60 + "\n")
+                    f.write("1. Review MATCHING_CARD_*.txt to see the raw text\n")
+                    f.write("2. Review card_*_html.html to see the HTML structure\n")
+                    f.write("3. Look for status indicators (In Progress, Upcoming, etc.)\n")
+                    f.write("4. Look for start time patterns\n")
+                    f.write("5. Adjust regex patterns or selectors as needed\n")
+                
+                log(f"\n★★★ DEBUG SUMMARY SAVED: {summary_file} ★★★")
+                log(f"Review the files in {debug_dir}/ to see all card data")
+            except Exception as e:
+                log(f"Could not create debug summary: {e}")
         
         return tournaments
         
