@@ -351,8 +351,10 @@ def search_tournaments_on_page(driver):
                 
                 start_time = parse_time_string(start_time_str) if start_time_str else None
                 
-                # Extract status
+                # Extract status - check for explicit keywords first, then infer from context
                 actual_status = "Unknown"
+                
+                # First check for explicit status keywords
                 status_indicators = {
                     "In Progress": ["In Progress", "Live", "Active", "Playing"],
                     "Upcoming": ["Upcoming", "Scheduled", "Future"],
@@ -362,8 +364,44 @@ def search_tournaments_on_page(driver):
                 for status, keywords in status_indicators.items():
                     if any(keyword in card_text for keyword in keywords):
                         actual_status = status
-                        log(f"Status: {actual_status}")
+                        log(f"Status from keyword: {actual_status}")
                         break
+                
+                # If no explicit keyword, infer from context
+                if actual_status == "Unknown":
+                    log("No explicit status keyword found, inferring from context...")
+                    
+                    # Look for completion percentage
+                    completion_match = re.search(r'(\d+)%\s*Complete', card_text, re.IGNORECASE)
+                    if completion_match:
+                        completion_pct = int(completion_match.group(1))
+                        log(f"Found completion: {completion_pct}%")
+                        
+                        if completion_pct == 100:
+                            actual_status = "Completed"
+                            log("Status inferred: Completed (100% complete)")
+                        elif completion_pct == 0:
+                            actual_status = "Upcoming"
+                            log("Status inferred: Upcoming (0% complete)")
+                        elif completion_pct > 0 and completion_pct < 100:
+                            actual_status = "In Progress"
+                            log("Status inferred: In Progress (partial completion)")
+                    else:
+                        # Check if today's date matches tournament date
+                        if tournament_date:
+                            today = datetime.date.today()
+                            today_str = today.strftime("%Y/%m/%d")
+                            
+                            if tournament_date == today_str:
+                                # Today's tournament with no completion info - probably upcoming
+                                actual_status = "Upcoming"
+                                log("Status inferred: Upcoming (today's tournament, no completion data)")
+                            elif tournament_date < today_str:
+                                # Past tournament - probably completed
+                                actual_status = "Completed"
+                                log("Status inferred: Completed (past date)")
+                
+                log(f"Final status: {actual_status}")
                 
                 # Get tournament URL from link element
                 tournament_url = None
@@ -636,8 +674,8 @@ def save_tournament_data(tournament):
             if '8-ball' in tournament['name'].lower():
                 payout_data = 'payouts20.json'
         
-        # ONLY display if status is "In Progress"
-        should_display = (tournament['status'] == 'In Progress')
+        # Display if status is "In Progress" OR "Upcoming"
+        should_display = (tournament['status'] in ['In Progress', 'Upcoming'])
         
         output_data = {
             'tournament_name': tournament['name'],
@@ -654,6 +692,10 @@ def save_tournament_data(tournament):
         log(f"\nTournament to display: {tournament['name']}")
         log(f"Status: {tournament['status']}")
         log(f"Display flag: {should_display}")
+        if should_display:
+            log("✓ Tournament will be displayed (Upcoming or In Progress)")
+        else:
+            log("○ Tournament will NOT be displayed (status is not Upcoming/In Progress)")
     
     # Save to both locations
     for file_path in [DATA_FILE, DATA_FILE_BACKUP]:
