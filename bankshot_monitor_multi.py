@@ -241,21 +241,76 @@ def search_tournaments_on_page(driver):
                 tournament_date = date_match.group(1) if date_match else None
                 log(f"Date: {tournament_date}")
                 
-                # Extract time - try multiple formats and patterns
+                # Extract time - prioritize tournament start time over registration/check-in
                 start_time_str = None
-                time_patterns = [
-                    r'(\d{1,2}:\d{2}\s*[AP]\.?M\.?)',  # 7:00 PM, 7:00PM, 7:00 P.M.
-                    r'(\d{1,2}\s*[AP]\.?M\.?)',         # 7 PM, 7PM, 7 P.M.
-                    r'Start[:\s]+(\d{1,2}:\d{2}\s*[AP]\.?M\.?)',  # Start: 7:00 PM
-                    r'Time[:\s]+(\d{1,2}:\d{2}\s*[AP]\.?M\.?)',   # Time: 7:00 PM
+                all_times_found = []
+                
+                # First, try to find times with specific context keywords (most reliable)
+                priority_patterns = [
+                    (r'(?:Tournament\s+)?Start[s]?[:\s]+(\d{1,2}(?::\d{2})?\s*[AP]\.?M\.?)', 'Tournament Start'),
+                    (r'(?:Play\s+)?Start[s]?[:\s]+(\d{1,2}(?::\d{2})?\s*[AP]\.?M\.?)', 'Play Start'),
+                    (r'Start\s+Time[:\s]+(\d{1,2}(?::\d{2})?\s*[AP]\.?M\.?)', 'Start Time'),
+                    (r'Begins?[:\s]+(\d{1,2}(?::\d{2})?\s*[AP]\.?M\.?)', 'Begins'),
                 ]
                 
-                for pattern in time_patterns:
+                for pattern, label in priority_patterns:
                     time_match = re.search(pattern, card_text, re.IGNORECASE)
                     if time_match:
                         start_time_str = time_match.group(1).strip()
-                        log(f"Found time with pattern '{pattern}': {start_time_str}")
+                        log(f"Found time with priority pattern '{label}': {start_time_str}")
                         break
+                
+                # If no priority pattern found, collect ALL times and filter out registration/check-in
+                if not start_time_str:
+                    log("No priority time pattern found, scanning for all times...")
+                    
+                    # Find all times in the card
+                    all_time_patterns = [
+                        r'(\d{1,2}:\d{2}\s*[AP]\.?M\.?)',  # 7:00 PM, 7:00PM
+                        r'(\d{1,2}\s*[AP]\.?M\.?)',         # 7 PM, 7PM
+                    ]
+                    
+                    for pattern in all_time_patterns:
+                        matches = re.finditer(pattern, card_text, re.IGNORECASE)
+                        for match in matches:
+                            time_val = match.group(1).strip()
+                            # Get context around the time (50 chars before and after)
+                            start_pos = max(0, match.start() - 50)
+                            end_pos = min(len(card_text), match.end() + 50)
+                            context = card_text[start_pos:end_pos]
+                            
+                            all_times_found.append({
+                                'time': time_val,
+                                'context': context
+                            })
+                    
+                    log(f"Found {len(all_times_found)} time(s) in card")
+                    
+                    # Filter out registration/check-in times
+                    filtered_times = []
+                    exclude_keywords = ['registration', 'check-in', 'check in', 'checkin', 'sign-in', 
+                                       'signin', 'sign in', 'doors', 'door open']
+                    
+                    for time_info in all_times_found:
+                        context_lower = time_info['context'].lower()
+                        is_excluded = any(keyword in context_lower for keyword in exclude_keywords)
+                        
+                        if is_excluded:
+                            log(f"  Excluding time {time_info['time']} (context suggests registration/check-in)")
+                            log(f"    Context: {time_info['context'][:100]}")
+                        else:
+                            filtered_times.append(time_info)
+                            log(f"  Keeping time {time_info['time']}")
+                            log(f"    Context: {time_info['context'][:100]}")
+                    
+                    # Use the LAST remaining time (tournament start is usually listed after registration)
+                    if filtered_times:
+                        start_time_str = filtered_times[-1]['time']
+                        log(f"Selected last filtered time as tournament start: {start_time_str}")
+                    elif all_times_found:
+                        # If all were filtered out, use the last one anyway
+                        start_time_str = all_times_found[-1]['time']
+                        log(f"All times were filtered, using last time anyway: {start_time_str}")
                 
                 if not start_time_str:
                     log("No start time found in card text")
