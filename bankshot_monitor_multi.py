@@ -408,12 +408,18 @@ def search_tournaments_on_page(driver):
                 try:
                     link_element = card.find_element(By.CSS_SELECTOR, "a[href*='/tournaments/']")
                     tournament_url = link_element.get_attribute('href')
-                    log(f"URL: {tournament_url}")
+                    log(f"Found URL from link: {tournament_url}")
                 except:
                     # Fallback: construct URL
                     if tournament_date and tournament_name:
                         date_no_slashes = tournament_date.replace('/', '')
-                        name_slug = re.sub(r'[^a-z0-9-]', '', tournament_name.lower().replace(' ', '-'))
+                        
+                        # Remove date from tournament name to avoid duplication in URL
+                        # Tournament names often start with date like "2025/11/19 Wednesday Night..."
+                        name_for_url = tournament_name
+                        name_for_url = re.sub(r'^\d{4}/\d{2}/\d{2}\s+', '', name_for_url)  # Remove date prefix
+                        
+                        name_slug = re.sub(r'[^a-z0-9-]', '', name_for_url.lower().replace(' ', '-'))
                         name_slug = re.sub(r'-+', '-', name_slug).strip('-')
                         tournament_url = f"https://digitalpool.com/tournaments/{date_no_slashes}-{name_slug}/"
                         log(f"Constructed URL: {tournament_url}")
