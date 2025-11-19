@@ -1,11 +1,11 @@
 {
-  "tournament_name": "No tournaments to display",
-  "tournament_url": null,
-  "venue": null,
-  "date": null,
+  "tournament_name": "Showing tournaments 1\u201320 of 848 Found",
+  "tournament_url": "https://digitalpool.com/tournaments/20251119-showing-tournaments-120-of-848-found/",
+  "venue": "Bankshot Billiards, Hilliard",
+  "date": "2025/11/19",
   "start_time": null,
-  "status": null,
-  "payout_data": null,
-  "last_updated": "2025-11-18 23:54:47",
+  "status": "Unknown",
+  "payout_data": "payouts15.json",
+  "last_updated": "2025-11-19 00:14:21",
   "display_tournament": false
 }
