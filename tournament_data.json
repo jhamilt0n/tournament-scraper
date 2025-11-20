@@ -1,11 +1,11 @@
 {
-  "tournament_name": "2025/11/19 Wednesday Night 9-Ball Tournament",
-  "tournament_url": "https://digitalpool.com/tournaments/20251119-wednesday-night-9-ball-tournament/",
-  "venue": "Bankshot Billiards, Hilliard",
-  "date": "2025/11/19",
-  "start_time": "7pm",
-  "status": "In Progress",
-  "payout_data": "payouts15.json",
-  "last_updated": "2025-11-19 22:59:10",
-  "display_tournament": true
+  "tournament_name": "No tournaments to display",
+  "tournament_url": null,
+  "venue": null,
+  "date": null,
+  "start_time": null,
+  "status": null,
+  "payout_data": null,
+  "last_updated": "2025-11-19 23:24:30",
+  "display_tournament": false
 }
