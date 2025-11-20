@@ -353,6 +353,13 @@ def search_tournaments_on_page(driver):
                 
                 # Extract status - check for explicit keywords first, then infer from context
                 actual_status = "Unknown"
+                player_count = 0
+                
+                # Extract player count
+                player_match = re.search(r'(\d+)\s+Players?', card_text, re.IGNORECASE)
+                if player_match:
+                    player_count = int(player_match.group(1))
+                    log(f"  Player count: {player_count}")
                 
                 # First check for explicit status keywords
                 status_indicators = {
@@ -381,14 +388,23 @@ def search_tournaments_on_page(driver):
                             actual_status = "Completed"
                             log("Status inferred: Completed (100% complete)")
                         elif completion_pct == 0:
-                            actual_status = "Upcoming"
-                            log("Status inferred: Upcoming (0% complete)")
+                            # KEY CHANGE: Check if players are registered
+                            if player_count > 0:
+                                actual_status = "In Progress"
+                                log(f"Status inferred: In Progress (0% complete but {player_count} players registered)")
+                            else:
+                                actual_status = "Upcoming"
+                                log("Status inferred: Upcoming (0% complete, no players)")
                         elif completion_pct > 0 and completion_pct < 100:
                             actual_status = "In Progress"
                             log("Status inferred: In Progress (partial completion)")
                     else:
-                        # Check if today's date matches tournament date
-                        if tournament_date:
+                        # No completion percentage - check players and date/time
+                        if player_count > 0:
+                            actual_status = "In Progress"
+                            log(f"Status inferred: In Progress ({player_count} players registered)")
+                        elif tournament_date:
+                            # Check if today's date matches tournament date
                             today = datetime.date.today()
                             today_str = today.strftime("%Y/%m/%d")
                             
