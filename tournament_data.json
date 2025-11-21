@@ -1,11 +1,11 @@
 {
-  "tournament_name": "No tournaments to display",
-  "tournament_url": null,
-  "venue": null,
-  "date": null,
-  "start_time": null,
-  "status": null,
-  "payout_data": null,
-  "last_updated": "2025-11-21 08:04:28",
-  "display_tournament": false
+  "tournament_name": "2025/11/21 Friday Night 8-Ball Tournament",
+  "tournament_url": "https://digitalpool.com/tournaments/20251121-friday-night-8-ball-tournament/",
+  "venue": "Bankshot Billiards, Hilliard",
+  "date": "2025/11/21",
+  "start_time": "7pm",
+  "status": "Upcoming",
+  "payout_data": "payouts20.json",
+  "last_updated": "2025-11-21 08:37:57",
+  "display_tournament": true
 }
