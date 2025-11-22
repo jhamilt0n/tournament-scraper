@@ -1,29 +1,32 @@
-[2025-11-21 23:49:18] 
+[2025-11-22 00:12:13] 
 ============================================================
-[2025-11-21 23:49:18] BANKSHOT BILLIARDS TOURNAMENT MONITOR - MULTI-TOURNAMENT
-[2025-11-21 23:49:18] ============================================================
-[2025-11-21 23:49:18] ============================================================
-[2025-11-21 23:49:18] Searching for ALL Bankshot tournaments today...
-[2025-11-21 23:49:18] ============================================================
-[2025-11-21 23:49:29] Waiting for page to load...
-[2025-11-21 23:49:30] ✓ Page loaded
-[2025-11-21 23:49:33] Searching for tournaments...
-[2025-11-21 23:49:33] Searching for: Bankshot Billiards
-[2025-11-21 23:49:37] Waiting for search results...
-[2025-11-21 23:49:49] Saved page source to /tmp/digitalpool_page.html for debugging
-[2025-11-21 23:49:49] Found 24 elements with selector: .ant-card
-[2025-11-21 23:49:49] Processing 24 potential tournament cards
-[2025-11-21 23:49:49] Created debug directory: /tmp/tournament_debug
-[2025-11-21 23:49:49] Saved card 0 debug files
-[2025-11-21 23:49:49] Saved card 1 debug files
-[2025-11-21 23:49:49] Saved card 2 debug files
-[2025-11-21 23:49:49] Saved card 3 debug files
-[2025-11-21 23:49:49] Saved card 4 debug files
-[2025-11-21 23:49:49] 
+[2025-11-22 00:12:13] BANKSHOT BILLIARDS TOURNAMENT MONITOR - MULTI-TOURNAMENT
+[2025-11-22 00:12:13] ============================================================
+[2025-11-22 00:12:13] Previous tournament from 2025/11/21 may still be active
+[2025-11-22 00:12:13] Will need to verify status on DigitalPool
+[2025-11-22 00:12:13] Checking if previous day's tournament is still active...
+[2025-11-22 00:12:13] ============================================================
+[2025-11-22 00:12:13] Searching for ALL Bankshot tournaments today...
+[2025-11-22 00:12:13] ============================================================
+[2025-11-22 00:12:22] Waiting for page to load...
+[2025-11-22 00:12:23] ✓ Page loaded
+[2025-11-22 00:12:26] Searching for tournaments...
+[2025-11-22 00:12:26] Searching for: Bankshot Billiards
+[2025-11-22 00:12:30] Waiting for search results...
+[2025-11-22 00:12:42] Saved page source to /tmp/digitalpool_page.html for debugging
+[2025-11-22 00:12:42] Found 24 elements with selector: .ant-card
+[2025-11-22 00:12:42] Processing 24 potential tournament cards
+[2025-11-22 00:12:42] Created debug directory: /tmp/tournament_debug
+[2025-11-22 00:12:42] Saved card 0 debug files
+[2025-11-22 00:12:42] Saved card 1 debug files
+[2025-11-22 00:12:42] Saved card 2 debug files
+[2025-11-22 00:12:42] Saved card 3 debug files
+[2025-11-22 00:12:42] Saved card 4 debug files
+[2025-11-22 00:12:42] 
 ==================================================
-[2025-11-21 23:49:49] Card 4 - Found matching venue!
-[2025-11-21 23:49:49] ==================================================
-[2025-11-21 23:49:49] Card text:
+[2025-11-22 00:12:42] Card 4 - Found matching venue!
+[2025-11-22 00:12:42] ==================================================
+[2025-11-22 00:12:42] Card text:
 2025/11/21 Friday Night 8-Ball Tournament
 November 21st 2025
 Bankshot Billiards - Hilliard, Ohio
@@ -31,8 +34,8 @@ Director: Bankshot Billiards
 Eight Ball • Double Elimination - Race to 2
 
 28 Players
-Progress: 90%
-90% Complete
+Progress: 94%
+94% Complete
 $20 Entry
 Player Auction
 Race 2/2
@@ -47,51 +50,51 @@ Bankshot Billiards
 3201 Hilliard-Rome Rd
 Hilliard, OH 43026
 
-[2025-11-21 23:49:49] ★ Marked card 4 as MATCHING CARD
-[2025-11-21 23:49:49] Found name in h3: 2025/11/21 Friday Night 8-Ball Tournament
-[2025-11-21 23:49:49] Date: 2025/11/21
-[2025-11-21 23:49:49] No priority time pattern found, scanning for all times...
-[2025-11-21 23:49:49] Found 3 time(s) in card
-[2025-11-21 23:49:49]   Keeping time 6:30pm
-[2025-11-21 23:49:49]     Context: ft Diamond Coin-Operated Tables
+[2025-11-22 00:12:42] ★ Marked card 4 as MATCHING CARD
+[2025-11-22 00:12:42] Found name in h3: 2025/11/21 Friday Night 8-Ball Tournament
+[2025-11-22 00:12:42] Date: 2025/11/21
+[2025-11-22 00:12:42] No priority time pattern found, scanning for all times...
+[2025-11-22 00:12:42] Found 3 time(s) in card
+[2025-11-22 00:12:42]   Keeping time 6:30pm
+[2025-11-22 00:12:42]     Context: ft Diamond Coin-Operated Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201
-[2025-11-21 23:49:49]   Keeping time 30pm
-[2025-11-21 23:49:49]     Context:  Diamond Coin-Operated Tables
+[2025-11-22 00:12:42]   Keeping time 30pm
+[2025-11-22 00:12:42]     Context:  Diamond Coin-Operated Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201 H
-[2025-11-21 23:49:49]   Keeping time 7pm
-[2025-11-21 23:49:49]     Context: ed Tables
+[2025-11-22 00:12:42]   Keeping time 7pm
+[2025-11-22 00:12:42]     Context: ed Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201 Hilliard-Rome Rd
 Hill
-[2025-11-21 23:49:49] Selected last filtered time as tournament start: 7pm
-[2025-11-21 23:49:49]   Player count: 28
-[2025-11-21 23:49:49] No explicit status keyword found, inferring from context...
-[2025-11-21 23:49:49] Found completion: 90%
-[2025-11-21 23:49:49] Status inferred: In Progress (partial completion)
-[2025-11-21 23:49:49] Final status: In Progress
-[2025-11-21 23:49:49] Constructed URL: https://digitalpool.com/tournaments/20251121-friday-night-8-ball-tournament/
-[2025-11-21 23:49:49] ✓ Successfully extracted tournament info
-[2025-11-21 23:49:49]   Name: 2025/11/21 Friday Night 8-Ball Tournament
-[2025-11-21 23:49:49]   Date: 2025/11/21
-[2025-11-21 23:49:49]   Time: 7pm
-[2025-11-21 23:49:49]   Status: In Progress
-[2025-11-21 23:49:49] Saved card 5 debug files
-[2025-11-21 23:49:49] 
+[2025-11-22 00:12:42] Selected last filtered time as tournament start: 7pm
+[2025-11-22 00:12:42]   Player count: 28
+[2025-11-22 00:12:42] No explicit status keyword found, inferring from context...
+[2025-11-22 00:12:42] Found completion: 94%
+[2025-11-22 00:12:42] Status inferred: In Progress (partial completion)
+[2025-11-22 00:12:42] Final status: In Progress
+[2025-11-22 00:12:42] Constructed URL: https://digitalpool.com/tournaments/20251121-friday-night-8-ball-tournament/
+[2025-11-22 00:12:42] ✓ Successfully extracted tournament info
+[2025-11-22 00:12:42]   Name: 2025/11/21 Friday Night 8-Ball Tournament
+[2025-11-22 00:12:42]   Date: 2025/11/21
+[2025-11-22 00:12:42]   Time: 7pm
+[2025-11-22 00:12:42]   Status: In Progress
+[2025-11-22 00:12:42] Saved card 5 debug files
+[2025-11-22 00:12:42] 
 ==================================================
-[2025-11-21 23:49:49] Card 5 - Found matching venue!
-[2025-11-21 23:49:49] ==================================================
-[2025-11-21 23:49:49] Card text:
+[2025-11-22 00:12:42] Card 5 - Found matching venue!
+[2025-11-22 00:12:42] ==================================================
+[2025-11-22 00:12:42] Card text:
 2025/11/17 Monday Night 10-Ball Tournament
 November 17th 2025
 Bankshot Billiards - Hilliard, Ohio
@@ -121,51 +124,51 @@ Bankshot Billiards
 3201 Hilliard-Rome Rd
 Hilliard, OH 43026
 
-[2025-11-21 23:49:49] ★ Marked card 5 as MATCHING CARD
-[2025-11-21 23:49:49] Found name in h3: 2025/11/17 Monday Night 10-Ball Tournament
-[2025-11-21 23:49:49] Date: 2025/11/17
-[2025-11-21 23:49:49] No priority time pattern found, scanning for all times...
-[2025-11-21 23:49:49] Found 3 time(s) in card
-[2025-11-21 23:49:49]   Keeping time 6:30pm
-[2025-11-21 23:49:49]     Context: e with 20 or more total players
+[2025-11-22 00:12:42] ★ Marked card 5 as MATCHING CARD
+[2025-11-22 00:12:42] Found name in h3: 2025/11/17 Monday Night 10-Ball Tournament
+[2025-11-22 00:12:42] Date: 2025/11/17
+[2025-11-22 00:12:42] No priority time pattern found, scanning for all times...
+[2025-11-22 00:12:42] Found 3 time(s) in card
+[2025-11-22 00:12:42]   Keeping time 6:30pm
+[2025-11-22 00:12:42]     Context: e with 20 or more total players
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201
-[2025-11-21 23:49:49]   Keeping time 30pm
-[2025-11-21 23:49:49]     Context: with 20 or more total players
+[2025-11-22 00:12:42]   Keeping time 30pm
+[2025-11-22 00:12:42]     Context: with 20 or more total players
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201 H
-[2025-11-21 23:49:49]   Keeping time 7pm
-[2025-11-21 23:49:49]     Context: l players
+[2025-11-22 00:12:42]   Keeping time 7pm
+[2025-11-22 00:12:42]     Context: l players
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201 Hilliard-Rome Rd
 Hill
-[2025-11-21 23:49:49] Selected last filtered time as tournament start: 7pm
-[2025-11-21 23:49:49]   Player count: 12
-[2025-11-21 23:49:49] No explicit status keyword found, inferring from context...
-[2025-11-21 23:49:49] Found completion: 100%
-[2025-11-21 23:49:49] Status inferred: Completed (100% complete)
-[2025-11-21 23:49:49] Final status: Completed
-[2025-11-21 23:49:49] Constructed URL: https://digitalpool.com/tournaments/20251117-monday-night-10-ball-tournament/
-[2025-11-21 23:49:49] ✓ Successfully extracted tournament info
-[2025-11-21 23:49:49]   Name: 2025/11/17 Monday Night 10-Ball Tournament
-[2025-11-21 23:49:49]   Date: 2025/11/17
-[2025-11-21 23:49:49]   Time: 7pm
-[2025-11-21 23:49:49]   Status: Completed
-[2025-11-21 23:49:49] Saved card 6 debug files
-[2025-11-21 23:49:49] 
+[2025-11-22 00:12:42] Selected last filtered time as tournament start: 7pm
+[2025-11-22 00:12:42]   Player count: 12
+[2025-11-22 00:12:42] No explicit status keyword found, inferring from context...
+[2025-11-22 00:12:42] Found completion: 100%
+[2025-11-22 00:12:42] Status inferred: Completed (100% complete)
+[2025-11-22 00:12:42] Final status: Completed
+[2025-11-22 00:12:42] Constructed URL: https://digitalpool.com/tournaments/20251117-monday-night-10-ball-tournament/
+[2025-11-22 00:12:42] ✓ Successfully extracted tournament info
+[2025-11-22 00:12:42]   Name: 2025/11/17 Monday Night 10-Ball Tournament
+[2025-11-22 00:12:42]   Date: 2025/11/17
+[2025-11-22 00:12:42]   Time: 7pm
+[2025-11-22 00:12:42]   Status: Completed
+[2025-11-22 00:12:42] Saved card 6 debug files
+[2025-11-22 00:12:42] 
 ==================================================
-[2025-11-21 23:49:49] Card 6 - Found matching venue!
-[2025-11-21 23:49:49] ==================================================
-[2025-11-21 23:49:49] Card text:
+[2025-11-22 00:12:42] Card 6 - Found matching venue!
+[2025-11-22 00:12:42] ==================================================
+[2025-11-22 00:12:42] Card text:
 2025/11/15 Two Guys and a Girl
 November 15th 2025
 Bankshot Billiards - Hilliard, Ohio
@@ -179,29 +182,29 @@ Charlies Angels: Dana Gilmore & Jason Bertolo & Dylan Lipapanatop - 1st
 Lucky: Paula Jones & Jimmy Southers & Chris Garey - 2nd
 Team Hg: Deidra Govine & Scott Govine & Sonny Hines - 3rd
 
-[2025-11-21 23:49:49] ★ Marked card 6 as MATCHING CARD
-[2025-11-21 23:49:49] Found name in h3: 2025/11/15 Two Guys and a Girl
-[2025-11-21 23:49:49] Date: 2025/11/15
-[2025-11-21 23:49:49] No priority time pattern found, scanning for all times...
-[2025-11-21 23:49:49] Found 0 time(s) in card
-[2025-11-21 23:49:49] No start time found in card text
-[2025-11-21 23:49:49]   Player count: 13
-[2025-11-21 23:49:49] No explicit status keyword found, inferring from context...
-[2025-11-21 23:49:49] Found completion: 100%
-[2025-11-21 23:49:49] Status inferred: Completed (100% complete)
-[2025-11-21 23:49:49] Final status: Completed
-[2025-11-21 23:49:49] Constructed URL: https://digitalpool.com/tournaments/20251115-two-guys-and-a-girl/
-[2025-11-21 23:49:49] ✓ Successfully extracted tournament info
-[2025-11-21 23:49:49]   Name: 2025/11/15 Two Guys and a Girl
-[2025-11-21 23:49:49]   Date: 2025/11/15
-[2025-11-21 23:49:49]   Time: None
-[2025-11-21 23:49:49]   Status: Completed
-[2025-11-21 23:49:49] Saved card 7 debug files
-[2025-11-21 23:49:49] 
+[2025-11-22 00:12:42] ★ Marked card 6 as MATCHING CARD
+[2025-11-22 00:12:42] Found name in h3: 2025/11/15 Two Guys and a Girl
+[2025-11-22 00:12:42] Date: 2025/11/15
+[2025-11-22 00:12:42] No priority time pattern found, scanning for all times...
+[2025-11-22 00:12:42] Found 0 time(s) in card
+[2025-11-22 00:12:42] No start time found in card text
+[2025-11-22 00:12:42]   Player count: 13
+[2025-11-22 00:12:42] No explicit status keyword found, inferring from context...
+[2025-11-22 00:12:42] Found completion: 100%
+[2025-11-22 00:12:42] Status inferred: Completed (100% complete)
+[2025-11-22 00:12:42] Final status: Completed
+[2025-11-22 00:12:42] Constructed URL: https://digitalpool.com/tournaments/20251115-two-guys-and-a-girl/
+[2025-11-22 00:12:42] ✓ Successfully extracted tournament info
+[2025-11-22 00:12:42]   Name: 2025/11/15 Two Guys and a Girl
+[2025-11-22 00:12:42]   Date: 2025/11/15
+[2025-11-22 00:12:42]   Time: None
+[2025-11-22 00:12:42]   Status: Completed
+[2025-11-22 00:12:42] Saved card 7 debug files
+[2025-11-22 00:12:42] 
 ==================================================
-[2025-11-21 23:49:49] Card 7 - Found matching venue!
-[2025-11-21 23:49:49] ==================================================
-[2025-11-21 23:49:49] Card text:
+[2025-11-22 00:12:42] Card 7 - Found matching venue!
+[2025-11-22 00:12:42] ==================================================
+[2025-11-22 00:12:42] Card text:
 2025/11/12 Wednesday Night 9-Ball Tournament
 November 12th 2025
 Bankshot Billiards - Hilliard, Ohio
@@ -229,51 +232,51 @@ Bankshot Billiards
 3201 Hilliard-Rome Rd
 Hilliard, OH 43026
 
-[2025-11-21 23:49:49] ★ Marked card 7 as MATCHING CARD
-[2025-11-21 23:49:49] Found name in h3: 2025/11/12 Wednesday Night 9-Ball Tournament
-[2025-11-21 23:49:49] Date: 2025/11/12
-[2025-11-21 23:49:49] No priority time pattern found, scanning for all times...
-[2025-11-21 23:49:49] Found 3 time(s) in card
-[2025-11-21 23:49:49]   Keeping time 6:30pm
-[2025-11-21 23:49:49]     Context: ft Diamond Coin-Operated Tables
+[2025-11-22 00:12:42] ★ Marked card 7 as MATCHING CARD
+[2025-11-22 00:12:42] Found name in h3: 2025/11/12 Wednesday Night 9-Ball Tournament
+[2025-11-22 00:12:42] Date: 2025/11/12
+[2025-11-22 00:12:42] No priority time pattern found, scanning for all times...
+[2025-11-22 00:12:42] Found 3 time(s) in card
+[2025-11-22 00:12:42]   Keeping time 6:30pm
+[2025-11-22 00:12:42]     Context: ft Diamond Coin-Operated Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201
-[2025-11-21 23:49:49]   Keeping time 30pm
-[2025-11-21 23:49:49]     Context:  Diamond Coin-Operated Tables
+[2025-11-22 00:12:42]   Keeping time 30pm
+[2025-11-22 00:12:42]     Context:  Diamond Coin-Operated Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201 H
-[2025-11-21 23:49:49]   Keeping time 7pm
-[2025-11-21 23:49:49]     Context: ed Tables
+[2025-11-22 00:12:42]   Keeping time 7pm
+[2025-11-22 00:12:42]     Context: ed Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201 Hilliard-Rome Rd
 Hill
-[2025-11-21 23:49:49] Selected last filtered time as tournament start: 7pm
-[2025-11-21 23:49:49]   Player count: 18
-[2025-11-21 23:49:49] No explicit status keyword found, inferring from context...
-[2025-11-21 23:49:49] Found completion: 100%
-[2025-11-21 23:49:49] Status inferred: Completed (100% complete)
-[2025-11-21 23:49:49] Final status: Completed
-[2025-11-21 23:49:49] Constructed URL: https://digitalpool.com/tournaments/20251112-wednesday-night-9-ball-tournament/
-[2025-11-21 23:49:49] ✓ Successfully extracted tournament info
-[2025-11-21 23:49:49]   Name: 2025/11/12 Wednesday Night 9-Ball Tournament
-[2025-11-21 23:49:49]   Date: 2025/11/12
-[2025-11-21 23:49:49]   Time: 7pm
-[2025-11-21 23:49:49]   Status: Completed
-[2025-11-21 23:49:50] Saved card 8 debug files
-[2025-11-21 23:49:50] 
+[2025-11-22 00:12:42] Selected last filtered time as tournament start: 7pm
+[2025-11-22 00:12:42]   Player count: 18
+[2025-11-22 00:12:42] No explicit status keyword found, inferring from context...
+[2025-11-22 00:12:42] Found completion: 100%
+[2025-11-22 00:12:42] Status inferred: Completed (100% complete)
+[2025-11-22 00:12:42] Final status: Completed
+[2025-11-22 00:12:42] Constructed URL: https://digitalpool.com/tournaments/20251112-wednesday-night-9-ball-tournament/
+[2025-11-22 00:12:42] ✓ Successfully extracted tournament info
+[2025-11-22 00:12:42]   Name: 2025/11/12 Wednesday Night 9-Ball Tournament
+[2025-11-22 00:12:42]   Date: 2025/11/12
+[2025-11-22 00:12:42]   Time: 7pm
+[2025-11-22 00:12:42]   Status: Completed
+[2025-11-22 00:12:42] Saved card 8 debug files
+[2025-11-22 00:12:42] 
 ==================================================
-[2025-11-21 23:49:50] Card 8 - Found matching venue!
-[2025-11-21 23:49:50] ==================================================
-[2025-11-21 23:49:50] Card text:
+[2025-11-22 00:12:42] Card 8 - Found matching venue!
+[2025-11-22 00:12:42] ==================================================
+[2025-11-22 00:12:42] Card text:
 2025/11/10 Monday Night 10-Ball Tournament
 November 10th 2025
 Bankshot Billiards - Hilliard, Ohio
@@ -303,51 +306,51 @@ Bankshot Billiards
 3201 Hilliard-Rome Rd
 Hilliard, OH 43026
 
-[2025-11-21 23:49:50] ★ Marked card 8 as MATCHING CARD
-[2025-11-21 23:49:50] Found name in h3: 2025/11/10 Monday Night 10-Ball Tournament
-[2025-11-21 23:49:50] Date: 2025/11/10
-[2025-11-21 23:49:50] No priority time pattern found, scanning for all times...
-[2025-11-21 23:49:50] Found 3 time(s) in card
-[2025-11-21 23:49:50]   Keeping time 6:30pm
-[2025-11-21 23:49:50]     Context: e with 20 or more total players
+[2025-11-22 00:12:42] ★ Marked card 8 as MATCHING CARD
+[2025-11-22 00:12:42] Found name in h3: 2025/11/10 Monday Night 10-Ball Tournament
+[2025-11-22 00:12:42] Date: 2025/11/10
+[2025-11-22 00:12:42] No priority time pattern found, scanning for all times...
+[2025-11-22 00:12:42] Found 3 time(s) in card
+[2025-11-22 00:12:42]   Keeping time 6:30pm
+[2025-11-22 00:12:42]     Context: e with 20 or more total players
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201
-[2025-11-21 23:49:50]   Keeping time 30pm
-[2025-11-21 23:49:50]     Context: with 20 or more total players
+[2025-11-22 00:12:42]   Keeping time 30pm
+[2025-11-22 00:12:42]     Context: with 20 or more total players
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201 H
-[2025-11-21 23:49:50]   Keeping time 7pm
-[2025-11-21 23:49:50]     Context: l players
+[2025-11-22 00:12:42]   Keeping time 7pm
+[2025-11-22 00:12:42]     Context: l players
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201 Hilliard-Rome Rd
 Hill
-[2025-11-21 23:49:50] Selected last filtered time as tournament start: 7pm
-[2025-11-21 23:49:50]   Player count: 11
-[2025-11-21 23:49:50] No explicit status keyword found, inferring from context...
-[2025-11-21 23:49:50] Found completion: 100%
-[2025-11-21 23:49:50] Status inferred: Completed (100% complete)
-[2025-11-21 23:49:50] Final status: Completed
-[2025-11-21 23:49:50] Constructed URL: https://digitalpool.com/tournaments/20251110-monday-night-10-ball-tournament/
-[2025-11-21 23:49:50] ✓ Successfully extracted tournament info
-[2025-11-21 23:49:50]   Name: 2025/11/10 Monday Night 10-Ball Tournament
-[2025-11-21 23:49:50]   Date: 2025/11/10
-[2025-11-21 23:49:50]   Time: 7pm
-[2025-11-21 23:49:50]   Status: Completed
-[2025-11-21 23:49:50] Saved card 9 debug files
-[2025-11-21 23:49:50] 
+[2025-11-22 00:12:42] Selected last filtered time as tournament start: 7pm
+[2025-11-22 00:12:42]   Player count: 11
+[2025-11-22 00:12:42] No explicit status keyword found, inferring from context...
+[2025-11-22 00:12:42] Found completion: 100%
+[2025-11-22 00:12:42] Status inferred: Completed (100% complete)
+[2025-11-22 00:12:42] Final status: Completed
+[2025-11-22 00:12:42] Constructed URL: https://digitalpool.com/tournaments/20251110-monday-night-10-ball-tournament/
+[2025-11-22 00:12:42] ✓ Successfully extracted tournament info
+[2025-11-22 00:12:42]   Name: 2025/11/10 Monday Night 10-Ball Tournament
+[2025-11-22 00:12:42]   Date: 2025/11/10
+[2025-11-22 00:12:42]   Time: 7pm
+[2025-11-22 00:12:42]   Status: Completed
+[2025-11-22 00:12:42] Saved card 9 debug files
+[2025-11-22 00:12:42] 
 ==================================================
-[2025-11-21 23:49:50] Card 9 - Found matching venue!
-[2025-11-21 23:49:50] ==================================================
-[2025-11-21 23:49:50] Card text:
+[2025-11-22 00:12:42] Card 9 - Found matching venue!
+[2025-11-22 00:12:42] ==================================================
+[2025-11-22 00:12:42] Card text:
 2025/11/07 Friday Night 9-Ball Tournament
 November 7th 2025
 Bankshot Billiards - Hilliard, Ohio
@@ -361,29 +364,29 @@ Ethan Druckenbrod - 1st (split)
 Riley Adkins - 1st (split)
 Ken Brown - 3rd
 
-[2025-11-21 23:49:50] ★ Marked card 9 as MATCHING CARD
-[2025-11-21 23:49:50] Found name in h3: 2025/11/07 Friday Night 9-Ball Tournament
-[2025-11-21 23:49:50] Date: 2025/11/07
-[2025-11-21 23:49:50] No priority time pattern found, scanning for all times...
-[2025-11-21 23:49:50] Found 0 time(s) in card
-[2025-11-21 23:49:50] No start time found in card text
-[2025-11-21 23:49:50]   Player count: 15
-[2025-11-21 23:49:50] No explicit status keyword found, inferring from context...
-[2025-11-21 23:49:50] Found completion: 100%
-[2025-11-21 23:49:50] Status inferred: Completed (100% complete)
-[2025-11-21 23:49:50] Final status: Completed
-[2025-11-21 23:49:50] Constructed URL: https://digitalpool.com/tournaments/20251107-friday-night-9-ball-tournament/
-[2025-11-21 23:49:50] ✓ Successfully extracted tournament info
-[2025-11-21 23:49:50]   Name: 2025/11/07 Friday Night 9-Ball Tournament
-[2025-11-21 23:49:50]   Date: 2025/11/07
-[2025-11-21 23:49:50]   Time: None
-[2025-11-21 23:49:50]   Status: Completed
-[2025-11-21 23:49:50] Saved card 10 debug files
-[2025-11-21 23:49:50] 
+[2025-11-22 00:12:42] ★ Marked card 9 as MATCHING CARD
+[2025-11-22 00:12:42] Found name in h3: 2025/11/07 Friday Night 9-Ball Tournament
+[2025-11-22 00:12:42] Date: 2025/11/07
+[2025-11-22 00:12:42] No priority time pattern found, scanning for all times...
+[2025-11-22 00:12:42] Found 0 time(s) in card
+[2025-11-22 00:12:42] No start time found in card text
+[2025-11-22 00:12:42]   Player count: 15
+[2025-11-22 00:12:42] No explicit status keyword found, inferring from context...
+[2025-11-22 00:12:42] Found completion: 100%
+[2025-11-22 00:12:42] Status inferred: Completed (100% complete)
+[2025-11-22 00:12:42] Final status: Completed
+[2025-11-22 00:12:42] Constructed URL: https://digitalpool.com/tournaments/20251107-friday-night-9-ball-tournament/
+[2025-11-22 00:12:42] ✓ Successfully extracted tournament info
+[2025-11-22 00:12:42]   Name: 2025/11/07 Friday Night 9-Ball Tournament
+[2025-11-22 00:12:42]   Date: 2025/11/07
+[2025-11-22 00:12:42]   Time: None
+[2025-11-22 00:12:42]   Status: Completed
+[2025-11-22 00:12:42] Saved card 10 debug files
+[2025-11-22 00:12:42] 
 ==================================================
-[2025-11-21 23:49:50] Card 10 - Found matching venue!
-[2025-11-21 23:49:50] ==================================================
-[2025-11-21 23:49:50] Card text:
+[2025-11-22 00:12:42] Card 10 - Found matching venue!
+[2025-11-22 00:12:42] ==================================================
+[2025-11-22 00:12:42] Card text:
 2025/11/03 Monday Night 10-Ball Tournament
 November 3rd 2025
 Bankshot Billiards - Hilliard, Ohio
@@ -397,29 +400,29 @@ Jason Bertolo - 1st (split)
 Tom Carlisle - 1st (split)
 Tom Walsh - 3rd
 
-[2025-11-21 23:49:50] ★ Marked card 10 as MATCHING CARD
-[2025-11-21 23:49:50] Found name in h3: 2025/11/03 Monday Night 10-Ball Tournament
-[2025-11-21 23:49:50] Date: 2025/11/03
-[2025-11-21 23:49:50] No priority time pattern found, scanning for all times...
-[2025-11-21 23:49:50] Found 0 time(s) in card
-[2025-11-21 23:49:50] No start time found in card text
-[2025-11-21 23:49:50]   Player count: 13
-[2025-11-21 23:49:50] No explicit status keyword found, inferring from context...
-[2025-11-21 23:49:50] Found completion: 100%
-[2025-11-21 23:49:50] Status inferred: Completed (100% complete)
-[2025-11-21 23:49:50] Final status: Completed
-[2025-11-21 23:49:50] Constructed URL: https://digitalpool.com/tournaments/20251103-monday-night-10-ball-tournament/
-[2025-11-21 23:49:50] ✓ Successfully extracted tournament info
-[2025-11-21 23:49:50]   Name: 2025/11/03 Monday Night 10-Ball Tournament
-[2025-11-21 23:49:50]   Date: 2025/11/03
-[2025-11-21 23:49:50]   Time: None
-[2025-11-21 23:49:50]   Status: Completed
-[2025-11-21 23:49:50] Saved card 11 debug files
-[2025-11-21 23:49:50] 
+[2025-11-22 00:12:42] ★ Marked card 10 as MATCHING CARD
+[2025-11-22 00:12:42] Found name in h3: 2025/11/03 Monday Night 10-Ball Tournament
+[2025-11-22 00:12:42] Date: 2025/11/03
+[2025-11-22 00:12:42] No priority time pattern found, scanning for all times...
+[2025-11-22 00:12:42] Found 0 time(s) in card
+[2025-11-22 00:12:42] No start time found in card text
+[2025-11-22 00:12:42]   Player count: 13
+[2025-11-22 00:12:42] No explicit status keyword found, inferring from context...
+[2025-11-22 00:12:42] Found completion: 100%
+[2025-11-22 00:12:42] Status inferred: Completed (100% complete)
+[2025-11-22 00:12:42] Final status: Completed
+[2025-11-22 00:12:42] Constructed URL: https://digitalpool.com/tournaments/20251103-monday-night-10-ball-tournament/
+[2025-11-22 00:12:42] ✓ Successfully extracted tournament info
+[2025-11-22 00:12:42]   Name: 2025/11/03 Monday Night 10-Ball Tournament
+[2025-11-22 00:12:42]   Date: 2025/11/03
+[2025-11-22 00:12:42]   Time: None
+[2025-11-22 00:12:42]   Status: Completed
+[2025-11-22 00:12:42] Saved card 11 debug files
+[2025-11-22 00:12:42] 
 ==================================================
-[2025-11-21 23:49:50] Card 11 - Found matching venue!
-[2025-11-21 23:49:50] ==================================================
-[2025-11-21 23:49:50] Card text:
+[2025-11-22 00:12:42] Card 11 - Found matching venue!
+[2025-11-22 00:12:42] ==================================================
+[2025-11-22 00:12:42] Card text:
 2025/10/31 Halloween Doubles
 October 31st 2025
 Bankshot Billiards - Hilliard, Ohio
@@ -442,27 +445,27 @@ This is a doubles tournament (not a Jack and Jill) with a combined max Fargo rat
 Prize will be awarded for best costume. Under 18 MUST BE ACCOMPANIED BY A LEGAL GUARDIAN. 21 & Under CANNOT PARTICIPATE AFTER 8PM - MAX RATING 700 FARGO.
 Any questions? Message Bankshot @ m.me/Bankshots.Cbus
 
-[2025-11-21 23:49:50] ★ Marked card 11 as MATCHING CARD
-[2025-11-21 23:49:50] Found name in h3: 2025/10/31 Halloween Doubles
-[2025-11-21 23:49:50] Date: 2025/10/31
-[2025-11-21 23:49:50] Found time with priority pattern 'Begins': 7 pm
-[2025-11-21 23:49:50]   Player count: 23
-[2025-11-21 23:49:50] No explicit status keyword found, inferring from context...
-[2025-11-21 23:49:50] Found completion: 100%
-[2025-11-21 23:49:50] Status inferred: Completed (100% complete)
-[2025-11-21 23:49:50] Final status: Completed
-[2025-11-21 23:49:50] Constructed URL: https://digitalpool.com/tournaments/20251031-halloween-doubles/
-[2025-11-21 23:49:50] ✓ Successfully extracted tournament info
-[2025-11-21 23:49:50]   Name: 2025/10/31 Halloween Doubles
-[2025-11-21 23:49:50]   Date: 2025/10/31
-[2025-11-21 23:49:50]   Time: 7 pm
-[2025-11-21 23:49:50]   Status: Completed
-[2025-11-21 23:49:50] Saved card 12 debug files
-[2025-11-21 23:49:50] 
+[2025-11-22 00:12:42] ★ Marked card 11 as MATCHING CARD
+[2025-11-22 00:12:43] Found name in h3: 2025/10/31 Halloween Doubles
+[2025-11-22 00:12:43] Date: 2025/10/31
+[2025-11-22 00:12:43] Found time with priority pattern 'Begins': 7 pm
+[2025-11-22 00:12:43]   Player count: 23
+[2025-11-22 00:12:43] No explicit status keyword found, inferring from context...
+[2025-11-22 00:12:43] Found completion: 100%
+[2025-11-22 00:12:43] Status inferred: Completed (100% complete)
+[2025-11-22 00:12:43] Final status: Completed
+[2025-11-22 00:12:43] Constructed URL: https://digitalpool.com/tournaments/20251031-halloween-doubles/
+[2025-11-22 00:12:43] ✓ Successfully extracted tournament info
+[2025-11-22 00:12:43]   Name: 2025/10/31 Halloween Doubles
+[2025-11-22 00:12:43]   Date: 2025/10/31
+[2025-11-22 00:12:43]   Time: 7 pm
+[2025-11-22 00:12:43]   Status: Completed
+[2025-11-22 00:12:43] Saved card 12 debug files
+[2025-11-22 00:12:43] 
 ==================================================
-[2025-11-21 23:49:50] Card 12 - Found matching venue!
-[2025-11-21 23:49:50] ==================================================
-[2025-11-21 23:49:50] Card text:
+[2025-11-22 00:12:43] Card 12 - Found matching venue!
+[2025-11-22 00:12:43] ==================================================
+[2025-11-22 00:12:43] Card text:
 2025/10/27 Monday Night 10-Ball Tournament
 October 27th 2025
 Bankshot Billiards - Hilliard, Ohio
@@ -492,51 +495,51 @@ Bankshot Billiards
 3201 Hilliard-Rome Rd
 Hilliard, OH 43026
 
-[2025-11-21 23:49:50] ★ Marked card 12 as MATCHING CARD
-[2025-11-21 23:49:50] Found name in h3: 2025/10/27 Monday Night 10-Ball Tournament
-[2025-11-21 23:49:50] Date: 2025/10/27
-[2025-11-21 23:49:50] No priority time pattern found, scanning for all times...
-[2025-11-21 23:49:50] Found 3 time(s) in card
-[2025-11-21 23:49:50]   Keeping time 6:30pm
-[2025-11-21 23:49:50]     Context: e with 20 or more total players
+[2025-11-22 00:12:43] ★ Marked card 12 as MATCHING CARD
+[2025-11-22 00:12:43] Found name in h3: 2025/10/27 Monday Night 10-Ball Tournament
+[2025-11-22 00:12:43] Date: 2025/10/27
+[2025-11-22 00:12:43] No priority time pattern found, scanning for all times...
+[2025-11-22 00:12:43] Found 3 time(s) in card
+[2025-11-22 00:12:43]   Keeping time 6:30pm
+[2025-11-22 00:12:43]     Context: e with 20 or more total players
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201
-[2025-11-21 23:49:50]   Keeping time 30pm
-[2025-11-21 23:49:50]     Context: with 20 or more total players
+[2025-11-22 00:12:43]   Keeping time 30pm
+[2025-11-22 00:12:43]     Context: with 20 or more total players
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201 H
-[2025-11-21 23:49:50]   Keeping time 7pm
-[2025-11-21 23:49:50]     Context: l players
+[2025-11-22 00:12:43]   Keeping time 7pm
+[2025-11-22 00:12:43]     Context: l players
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201 Hilliard-Rome Rd
 Hill
-[2025-11-21 23:49:50] Selected last filtered time as tournament start: 7pm
-[2025-11-21 23:49:50]   Player count: 11
-[2025-11-21 23:49:50] No explicit status keyword found, inferring from context...
-[2025-11-21 23:49:50] Found completion: 100%
-[2025-11-21 23:49:50] Status inferred: Completed (100% complete)
-[2025-11-21 23:49:50] Final status: Completed
-[2025-11-21 23:49:50] Constructed URL: https://digitalpool.com/tournaments/20251027-monday-night-10-ball-tournament/
-[2025-11-21 23:49:50] ✓ Successfully extracted tournament info
-[2025-11-21 23:49:50]   Name: 2025/10/27 Monday Night 10-Ball Tournament
-[2025-11-21 23:49:50]   Date: 2025/10/27
-[2025-11-21 23:49:50]   Time: 7pm
-[2025-11-21 23:49:50]   Status: Completed
-[2025-11-21 23:49:50] Saved card 13 debug files
-[2025-11-21 23:49:50] 
+[2025-11-22 00:12:43] Selected last filtered time as tournament start: 7pm
+[2025-11-22 00:12:43]   Player count: 11
+[2025-11-22 00:12:43] No explicit status keyword found, inferring from context...
+[2025-11-22 00:12:43] Found completion: 100%
+[2025-11-22 00:12:43] Status inferred: Completed (100% complete)
+[2025-11-22 00:12:43] Final status: Completed
+[2025-11-22 00:12:43] Constructed URL: https://digitalpool.com/tournaments/20251027-monday-night-10-ball-tournament/
+[2025-11-22 00:12:43] ✓ Successfully extracted tournament info
+[2025-11-22 00:12:43]   Name: 2025/10/27 Monday Night 10-Ball Tournament
+[2025-11-22 00:12:43]   Date: 2025/10/27
+[2025-11-22 00:12:43]   Time: 7pm
+[2025-11-22 00:12:43]   Status: Completed
+[2025-11-22 00:12:43] Saved card 13 debug files
+[2025-11-22 00:12:43] 
 ==================================================
-[2025-11-21 23:49:50] Card 13 - Found matching venue!
-[2025-11-21 23:49:50] ==================================================
-[2025-11-21 23:49:50] Card text:
+[2025-11-22 00:12:43] Card 13 - Found matching venue!
+[2025-11-22 00:12:43] ==================================================
+[2025-11-22 00:12:43] Card text:
 2025/10/24 Friday Night 8-Ball Tournament
 October 24th 2025
 Bankshot Billiards - Hilliard, Ohio
@@ -563,51 +566,51 @@ Bankshot Billiards
 3201 Hilliard-Rome Rd
 Hilliard, OH 43026
 
-[2025-11-21 23:49:50] ★ Marked card 13 as MATCHING CARD
-[2025-11-21 23:49:50] Found name in h3: 2025/10/24 Friday Night 8-Ball Tournament
-[2025-11-21 23:49:50] Date: 2025/10/24
-[2025-11-21 23:49:50] No priority time pattern found, scanning for all times...
-[2025-11-21 23:49:50] Found 3 time(s) in card
-[2025-11-21 23:49:50]   Keeping time 6:30pm
-[2025-11-21 23:49:50]     Context: ft Diamond Coin-Operated Tables
+[2025-11-22 00:12:43] ★ Marked card 13 as MATCHING CARD
+[2025-11-22 00:12:43] Found name in h3: 2025/10/24 Friday Night 8-Ball Tournament
+[2025-11-22 00:12:43] Date: 2025/10/24
+[2025-11-22 00:12:43] No priority time pattern found, scanning for all times...
+[2025-11-22 00:12:43] Found 3 time(s) in card
+[2025-11-22 00:12:43]   Keeping time 6:30pm
+[2025-11-22 00:12:43]     Context: ft Diamond Coin-Operated Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201
-[2025-11-21 23:49:50]   Keeping time 30pm
-[2025-11-21 23:49:50]     Context:  Diamond Coin-Operated Tables
+[2025-11-22 00:12:43]   Keeping time 30pm
+[2025-11-22 00:12:43]     Context:  Diamond Coin-Operated Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201 H
-[2025-11-21 23:49:50]   Keeping time 7pm
-[2025-11-21 23:49:50]     Context: ed Tables
+[2025-11-22 00:12:43]   Keeping time 7pm
+[2025-11-22 00:12:43]     Context: ed Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201 Hilliard-Rome Rd
 Hill
-[2025-11-21 23:49:50] Selected last filtered time as tournament start: 7pm
-[2025-11-21 23:49:50]   Player count: 18
-[2025-11-21 23:49:50] No explicit status keyword found, inferring from context...
-[2025-11-21 23:49:50] Found completion: 100%
-[2025-11-21 23:49:50] Status inferred: Completed (100% complete)
-[2025-11-21 23:49:50] Final status: Completed
-[2025-11-21 23:49:50] Constructed URL: https://digitalpool.com/tournaments/20251024-friday-night-8-ball-tournament/
-[2025-11-21 23:49:50] ✓ Successfully extracted tournament info
-[2025-11-21 23:49:50]   Name: 2025/10/24 Friday Night 8-Ball Tournament
-[2025-11-21 23:49:50]   Date: 2025/10/24
-[2025-11-21 23:49:50]   Time: 7pm
-[2025-11-21 23:49:50]   Status: Completed
-[2025-11-21 23:49:50] Saved card 14 debug files
-[2025-11-21 23:49:50] 
+[2025-11-22 00:12:43] Selected last filtered time as tournament start: 7pm
+[2025-11-22 00:12:43]   Player count: 18
+[2025-11-22 00:12:43] No explicit status keyword found, inferring from context...
+[2025-11-22 00:12:43] Found completion: 100%
+[2025-11-22 00:12:43] Status inferred: Completed (100% complete)
+[2025-11-22 00:12:43] Final status: Completed
+[2025-11-22 00:12:43] Constructed URL: https://digitalpool.com/tournaments/20251024-friday-night-8-ball-tournament/
+[2025-11-22 00:12:43] ✓ Successfully extracted tournament info
+[2025-11-22 00:12:43]   Name: 2025/10/24 Friday Night 8-Ball Tournament
+[2025-11-22 00:12:43]   Date: 2025/10/24
+[2025-11-22 00:12:43]   Time: 7pm
+[2025-11-22 00:12:43]   Status: Completed
+[2025-11-22 00:12:43] Saved card 14 debug files
+[2025-11-22 00:12:43] 
 ==================================================
-[2025-11-21 23:49:50] Card 14 - Found matching venue!
-[2025-11-21 23:49:50] ==================================================
-[2025-11-21 23:49:50] Card text:
+[2025-11-22 00:12:43] Card 14 - Found matching venue!
+[2025-11-22 00:12:43] ==================================================
+[2025-11-22 00:12:43] Card text:
 2025/11/19 Wednesday Night 9-Ball Tournament
 November 19th 2025
 Bankshot Billiards - Hilliard, Ohio
@@ -635,51 +638,51 @@ Bankshot Billiards
 3201 Hilliard-Rome Rd
 Hilliard, OH 43026
 
-[2025-11-21 23:49:50] ★ Marked card 14 as MATCHING CARD
-[2025-11-21 23:49:50] Found name in h3: 2025/11/19 Wednesday Night 9-Ball Tournament
-[2025-11-21 23:49:50] Date: 2025/11/19
-[2025-11-21 23:49:50] No priority time pattern found, scanning for all times...
-[2025-11-21 23:49:50] Found 3 time(s) in card
-[2025-11-21 23:49:50]   Keeping time 6:30pm
-[2025-11-21 23:49:50]     Context: ft Diamond Coin-Operated Tables
+[2025-11-22 00:12:43] ★ Marked card 14 as MATCHING CARD
+[2025-11-22 00:12:43] Found name in h3: 2025/11/19 Wednesday Night 9-Ball Tournament
+[2025-11-22 00:12:43] Date: 2025/11/19
+[2025-11-22 00:12:43] No priority time pattern found, scanning for all times...
+[2025-11-22 00:12:43] Found 3 time(s) in card
+[2025-11-22 00:12:43]   Keeping time 6:30pm
+[2025-11-22 00:12:43]     Context: ft Diamond Coin-Operated Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201
-[2025-11-21 23:49:50]   Keeping time 30pm
-[2025-11-21 23:49:50]     Context:  Diamond Coin-Operated Tables
+[2025-11-22 00:12:43]   Keeping time 30pm
+[2025-11-22 00:12:43]     Context:  Diamond Coin-Operated Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201 H
-[2025-11-21 23:49:50]   Keeping time 7pm
-[2025-11-21 23:49:50]     Context: ed Tables
+[2025-11-22 00:12:43]   Keeping time 7pm
+[2025-11-22 00:12:43]     Context: ed Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201 Hilliard-Rome Rd
 Hill
-[2025-11-21 23:49:50] Selected last filtered time as tournament start: 7pm
-[2025-11-21 23:49:50]   Player count: 17
-[2025-11-21 23:49:50] No explicit status keyword found, inferring from context...
-[2025-11-21 23:49:50] Found completion: 100%
-[2025-11-21 23:49:50] Status inferred: Completed (100% complete)
-[2025-11-21 23:49:50] Final status: Completed
-[2025-11-21 23:49:50] Constructed URL: https://digitalpool.com/tournaments/20251119-wednesday-night-9-ball-tournament/
-[2025-11-21 23:49:50] ✓ Successfully extracted tournament info
-[2025-11-21 23:49:50]   Name: 2025/11/19 Wednesday Night 9-Ball Tournament
-[2025-11-21 23:49:50]   Date: 2025/11/19
-[2025-11-21 23:49:50]   Time: 7pm
-[2025-11-21 23:49:50]   Status: Completed
-[2025-11-21 23:49:50] Saved card 15 debug files
-[2025-11-21 23:49:50] 
+[2025-11-22 00:12:43] Selected last filtered time as tournament start: 7pm
+[2025-11-22 00:12:43]   Player count: 17
+[2025-11-22 00:12:43] No explicit status keyword found, inferring from context...
+[2025-11-22 00:12:43] Found completion: 100%
+[2025-11-22 00:12:43] Status inferred: Completed (100% complete)
+[2025-11-22 00:12:43] Final status: Completed
+[2025-11-22 00:12:43] Constructed URL: https://digitalpool.com/tournaments/20251119-wednesday-night-9-ball-tournament/
+[2025-11-22 00:12:43] ✓ Successfully extracted tournament info
+[2025-11-22 00:12:43]   Name: 2025/11/19 Wednesday Night 9-Ball Tournament
+[2025-11-22 00:12:43]   Date: 2025/11/19
+[2025-11-22 00:12:43]   Time: 7pm
+[2025-11-22 00:12:43]   Status: Completed
+[2025-11-22 00:12:43] Saved card 15 debug files
+[2025-11-22 00:12:43] 
 ==================================================
-[2025-11-21 23:49:50] Card 15 - Found matching venue!
-[2025-11-21 23:49:50] ==================================================
-[2025-11-21 23:49:50] Card text:
+[2025-11-22 00:12:43] Card 15 - Found matching venue!
+[2025-11-22 00:12:43] ==================================================
+[2025-11-22 00:12:43] Card text:
 2025/11/15 Saturday Night 8-Ball Tournament
 November 15th 2025
 Bankshot Billiards - Hilliard, Ohio
@@ -706,51 +709,51 @@ Bankshot Billiards
 3201 Hilliard-Rome Rd
 Hilliard, OH 43026
 
-[2025-11-21 23:49:50] ★ Marked card 15 as MATCHING CARD
-[2025-11-21 23:49:50] Found name in h3: 2025/11/15 Saturday Night 8-Ball Tournament
-[2025-11-21 23:49:50] Date: 2025/11/15
-[2025-11-21 23:49:50] No priority time pattern found, scanning for all times...
-[2025-11-21 23:49:50] Found 3 time(s) in card
-[2025-11-21 23:49:50]   Keeping time 6:30pm
-[2025-11-21 23:49:50]     Context: ft Diamond Coin-Operated Tables
+[2025-11-22 00:12:43] ★ Marked card 15 as MATCHING CARD
+[2025-11-22 00:12:43] Found name in h3: 2025/11/15 Saturday Night 8-Ball Tournament
+[2025-11-22 00:12:43] Date: 2025/11/15
+[2025-11-22 00:12:43] No priority time pattern found, scanning for all times...
+[2025-11-22 00:12:43] Found 3 time(s) in card
+[2025-11-22 00:12:43]   Keeping time 6:30pm
+[2025-11-22 00:12:43]     Context: ft Diamond Coin-Operated Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201
-[2025-11-21 23:49:50]   Keeping time 30pm
-[2025-11-21 23:49:50]     Context:  Diamond Coin-Operated Tables
+[2025-11-22 00:12:43]   Keeping time 30pm
+[2025-11-22 00:12:43]     Context:  Diamond Coin-Operated Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201 H
-[2025-11-21 23:49:50]   Keeping time 7pm
-[2025-11-21 23:49:50]     Context: ed Tables
+[2025-11-22 00:12:43]   Keeping time 7pm
+[2025-11-22 00:12:43]     Context: ed Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201 Hilliard-Rome Rd
 Hill
-[2025-11-21 23:49:50] Selected last filtered time as tournament start: 7pm
-[2025-11-21 23:49:50]   Player count: 27
-[2025-11-21 23:49:50] No explicit status keyword found, inferring from context...
-[2025-11-21 23:49:50] Found completion: 100%
-[2025-11-21 23:49:50] Status inferred: Completed (100% complete)
-[2025-11-21 23:49:50] Final status: Completed
-[2025-11-21 23:49:50] Constructed URL: https://digitalpool.com/tournaments/20251115-saturday-night-8-ball-tournament/
-[2025-11-21 23:49:50] ✓ Successfully extracted tournament info
-[2025-11-21 23:49:50]   Name: 2025/11/15 Saturday Night 8-Ball Tournament
-[2025-11-21 23:49:50]   Date: 2025/11/15
-[2025-11-21 23:49:50]   Time: 7pm
-[2025-11-21 23:49:50]   Status: Completed
-[2025-11-21 23:49:50] Saved card 16 debug files
-[2025-11-21 23:49:50] 
+[2025-11-22 00:12:43] Selected last filtered time as tournament start: 7pm
+[2025-11-22 00:12:43]   Player count: 27
+[2025-11-22 00:12:43] No explicit status keyword found, inferring from context...
+[2025-11-22 00:12:43] Found completion: 100%
+[2025-11-22 00:12:43] Status inferred: Completed (100% complete)
+[2025-11-22 00:12:43] Final status: Completed
+[2025-11-22 00:12:43] Constructed URL: https://digitalpool.com/tournaments/20251115-saturday-night-8-ball-tournament/
+[2025-11-22 00:12:43] ✓ Successfully extracted tournament info
+[2025-11-22 00:12:43]   Name: 2025/11/15 Saturday Night 8-Ball Tournament
+[2025-11-22 00:12:43]   Date: 2025/11/15
+[2025-11-22 00:12:43]   Time: 7pm
+[2025-11-22 00:12:43]   Status: Completed
+[2025-11-22 00:12:43] Saved card 16 debug files
+[2025-11-22 00:12:43] 
 ==================================================
-[2025-11-21 23:49:50] Card 16 - Found matching venue!
-[2025-11-21 23:49:50] ==================================================
-[2025-11-21 23:49:50] Card text:
+[2025-11-22 00:12:43] Card 16 - Found matching venue!
+[2025-11-22 00:12:43] ==================================================
+[2025-11-22 00:12:43] Card text:
 2025/11/14 Friday Night 8-Ball Tournament
 November 14th 2025
 Bankshot Billiards - Hilliard, Ohio
@@ -777,51 +780,51 @@ Bankshot Billiards
 3201 Hilliard-Rome Rd
 Hilliard, OH 43026
 
-[2025-11-21 23:49:50] ★ Marked card 16 as MATCHING CARD
-[2025-11-21 23:49:50] Found name in h3: 2025/11/14 Friday Night 8-Ball Tournament
-[2025-11-21 23:49:50] Date: 2025/11/14
-[2025-11-21 23:49:50] No priority time pattern found, scanning for all times...
-[2025-11-21 23:49:50] Found 3 time(s) in card
-[2025-11-21 23:49:50]   Keeping time 6:30pm
-[2025-11-21 23:49:50]     Context: ft Diamond Coin-Operated Tables
+[2025-11-22 00:12:43] ★ Marked card 16 as MATCHING CARD
+[2025-11-22 00:12:43] Found name in h3: 2025/11/14 Friday Night 8-Ball Tournament
+[2025-11-22 00:12:43] Date: 2025/11/14
+[2025-11-22 00:12:43] No priority time pattern found, scanning for all times...
+[2025-11-22 00:12:43] Found 3 time(s) in card
+[2025-11-22 00:12:43]   Keeping time 6:30pm
+[2025-11-22 00:12:43]     Context: ft Diamond Coin-Operated Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201
-[2025-11-21 23:49:50]   Keeping time 30pm
-[2025-11-21 23:49:50]     Context:  Diamond Coin-Operated Tables
+[2025-11-22 00:12:43]   Keeping time 30pm
+[2025-11-22 00:12:43]     Context:  Diamond Coin-Operated Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201 H
-[2025-11-21 23:49:50]   Keeping time 7pm
-[2025-11-21 23:49:50]     Context: ed Tables
+[2025-11-22 00:12:43]   Keeping time 7pm
+[2025-11-22 00:12:43]     Context: ed Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201 Hilliard-Rome Rd
 Hill
-[2025-11-21 23:49:50] Selected last filtered time as tournament start: 7pm
-[2025-11-21 23:49:50]   Player count: 20
-[2025-11-21 23:49:50] No explicit status keyword found, inferring from context...
-[2025-11-21 23:49:50] Found completion: 100%
-[2025-11-21 23:49:50] Status inferred: Completed (100% complete)
-[2025-11-21 23:49:50] Final status: Completed
-[2025-11-21 23:49:50] Constructed URL: https://digitalpool.com/tournaments/20251114-friday-night-8-ball-tournament/
-[2025-11-21 23:49:50] ✓ Successfully extracted tournament info
-[2025-11-21 23:49:50]   Name: 2025/11/14 Friday Night 8-Ball Tournament
-[2025-11-21 23:49:50]   Date: 2025/11/14
-[2025-11-21 23:49:50]   Time: 7pm
-[2025-11-21 23:49:50]   Status: Completed
-[2025-11-21 23:49:50] Saved card 17 debug files
-[2025-11-21 23:49:50] 
+[2025-11-22 00:12:43] Selected last filtered time as tournament start: 7pm
+[2025-11-22 00:12:43]   Player count: 20
+[2025-11-22 00:12:43] No explicit status keyword found, inferring from context...
+[2025-11-22 00:12:43] Found completion: 100%
+[2025-11-22 00:12:43] Status inferred: Completed (100% complete)
+[2025-11-22 00:12:43] Final status: Completed
+[2025-11-22 00:12:43] Constructed URL: https://digitalpool.com/tournaments/20251114-friday-night-8-ball-tournament/
+[2025-11-22 00:12:43] ✓ Successfully extracted tournament info
+[2025-11-22 00:12:43]   Name: 2025/11/14 Friday Night 8-Ball Tournament
+[2025-11-22 00:12:43]   Date: 2025/11/14
+[2025-11-22 00:12:43]   Time: 7pm
+[2025-11-22 00:12:43]   Status: Completed
+[2025-11-22 00:12:43] Saved card 17 debug files
+[2025-11-22 00:12:43] 
 ==================================================
-[2025-11-21 23:49:50] Card 17 - Found matching venue!
-[2025-11-21 23:49:50] ==================================================
-[2025-11-21 23:49:50] Card text:
+[2025-11-22 00:12:43] Card 17 - Found matching venue!
+[2025-11-22 00:12:43] ==================================================
+[2025-11-22 00:12:43] Card text:
 2025/11/11 Veterans Day Tournament
 November 11th 2025
 Bankshot Billiards - Hilliard, Ohio
@@ -835,29 +838,29 @@ Dylan Lipatapanlop - 1st
 Scott Stephens - 2nd
 Matt Fitch Jr - 3rd
 
-[2025-11-21 23:49:50] ★ Marked card 17 as MATCHING CARD
-[2025-11-21 23:49:50] Found name in h3: 2025/11/11 Veterans Day Tournament
-[2025-11-21 23:49:50] Date: 2025/11/11
-[2025-11-21 23:49:50] No priority time pattern found, scanning for all times...
-[2025-11-21 23:49:50] Found 0 time(s) in card
-[2025-11-21 23:49:50] No start time found in card text
-[2025-11-21 23:49:50]   Player count: 13
-[2025-11-21 23:49:50] No explicit status keyword found, inferring from context...
-[2025-11-21 23:49:50] Found completion: 100%
-[2025-11-21 23:49:50] Status inferred: Completed (100% complete)
-[2025-11-21 23:49:50] Final status: Completed
-[2025-11-21 23:49:50] Constructed URL: https://digitalpool.com/tournaments/20251111-veterans-day-tournament/
-[2025-11-21 23:49:50] ✓ Successfully extracted tournament info
-[2025-11-21 23:49:50]   Name: 2025/11/11 Veterans Day Tournament
-[2025-11-21 23:49:50]   Date: 2025/11/11
-[2025-11-21 23:49:50]   Time: None
-[2025-11-21 23:49:50]   Status: Completed
-[2025-11-21 23:49:50] Saved card 18 debug files
-[2025-11-21 23:49:50] 
+[2025-11-22 00:12:43] ★ Marked card 17 as MATCHING CARD
+[2025-11-22 00:12:43] Found name in h3: 2025/11/11 Veterans Day Tournament
+[2025-11-22 00:12:43] Date: 2025/11/11
+[2025-11-22 00:12:43] No priority time pattern found, scanning for all times...
+[2025-11-22 00:12:43] Found 0 time(s) in card
+[2025-11-22 00:12:43] No start time found in card text
+[2025-11-22 00:12:43]   Player count: 13
+[2025-11-22 00:12:43] No explicit status keyword found, inferring from context...
+[2025-11-22 00:12:43] Found completion: 100%
+[2025-11-22 00:12:43] Status inferred: Completed (100% complete)
+[2025-11-22 00:12:43] Final status: Completed
+[2025-11-22 00:12:43] Constructed URL: https://digitalpool.com/tournaments/20251111-veterans-day-tournament/
+[2025-11-22 00:12:43] ✓ Successfully extracted tournament info
+[2025-11-22 00:12:43]   Name: 2025/11/11 Veterans Day Tournament
+[2025-11-22 00:12:43]   Date: 2025/11/11
+[2025-11-22 00:12:43]   Time: None
+[2025-11-22 00:12:43]   Status: Completed
+[2025-11-22 00:12:43] Saved card 18 debug files
+[2025-11-22 00:12:43] 
 ==================================================
-[2025-11-21 23:49:50] Card 18 - Found matching venue!
-[2025-11-21 23:49:50] ==================================================
-[2025-11-21 23:49:50] Card text:
+[2025-11-22 00:12:43] Card 18 - Found matching venue!
+[2025-11-22 00:12:43] ==================================================
+[2025-11-22 00:12:43] Card text:
 2025/11/08 Saturday Night 9-Ball Tournament
 November 8th 2025
 Bankshot Billiards - Hilliard, Ohio
@@ -871,29 +874,29 @@ Riley Adkins - 1st
 Zac Shoaf - 2nd
 James Gomes - 3rd
 
-[2025-11-21 23:49:50] ★ Marked card 18 as MATCHING CARD
-[2025-11-21 23:49:50] Found name in h3: 2025/11/08 Saturday Night 9-Ball Tournament
-[2025-11-21 23:49:50] Date: 2025/11/08
-[2025-11-21 23:49:50] No priority time pattern found, scanning for all times...
-[2025-11-21 23:49:50] Found 0 time(s) in card
-[2025-11-21 23:49:50] No start time found in card text
-[2025-11-21 23:49:50]   Player count: 16
-[2025-11-21 23:49:50] No explicit status keyword found, inferring from context...
-[2025-11-21 23:49:50] Found completion: 100%
-[2025-11-21 23:49:50] Status inferred: Completed (100% complete)
-[2025-11-21 23:49:50] Final status: Completed
-[2025-11-21 23:49:51] Constructed URL: https://digitalpool.com/tournaments/20251108-saturday-night-9-ball-tournament/
-[2025-11-21 23:49:51] ✓ Successfully extracted tournament info
-[2025-11-21 23:49:51]   Name: 2025/11/08 Saturday Night 9-Ball Tournament
-[2025-11-21 23:49:51]   Date: 2025/11/08
-[2025-11-21 23:49:51]   Time: None
-[2025-11-21 23:49:51]   Status: Completed
-[2025-11-21 23:49:51] Saved card 19 debug files
-[2025-11-21 23:49:51] 
+[2025-11-22 00:12:43] ★ Marked card 18 as MATCHING CARD
+[2025-11-22 00:12:43] Found name in h3: 2025/11/08 Saturday Night 9-Ball Tournament
+[2025-11-22 00:12:43] Date: 2025/11/08
+[2025-11-22 00:12:43] No priority time pattern found, scanning for all times...
+[2025-11-22 00:12:43] Found 0 time(s) in card
+[2025-11-22 00:12:43] No start time found in card text
+[2025-11-22 00:12:43]   Player count: 16
+[2025-11-22 00:12:43] No explicit status keyword found, inferring from context...
+[2025-11-22 00:12:43] Found completion: 100%
+[2025-11-22 00:12:43] Status inferred: Completed (100% complete)
+[2025-11-22 00:12:43] Final status: Completed
+[2025-11-22 00:12:43] Constructed URL: https://digitalpool.com/tournaments/20251108-saturday-night-9-ball-tournament/
+[2025-11-22 00:12:43] ✓ Successfully extracted tournament info
+[2025-11-22 00:12:43]   Name: 2025/11/08 Saturday Night 9-Ball Tournament
+[2025-11-22 00:12:43]   Date: 2025/11/08
+[2025-11-22 00:12:43]   Time: None
+[2025-11-22 00:12:43]   Status: Completed
+[2025-11-22 00:12:43] Saved card 19 debug files
+[2025-11-22 00:12:43] 
 ==================================================
-[2025-11-21 23:49:51] Card 19 - Found matching venue!
-[2025-11-21 23:49:51] ==================================================
-[2025-11-21 23:49:51] Card text:
+[2025-11-22 00:12:43] Card 19 - Found matching venue!
+[2025-11-22 00:12:43] ==================================================
+[2025-11-22 00:12:43] Card text:
 2025/11/05 Wednesday Night 9-Ball Tournament
 November 5th 2025
 Bankshot Billiards - Hilliard, Ohio
@@ -921,51 +924,51 @@ Bankshot Billiards
 3201 Hilliard-Rome Rd
 Hilliard, OH 43026
 
-[2025-11-21 23:49:51] ★ Marked card 19 as MATCHING CARD
-[2025-11-21 23:49:51] Found name in h3: 2025/11/05 Wednesday Night 9-Ball Tournament
-[2025-11-21 23:49:51] Date: 2025/11/05
-[2025-11-21 23:49:51] No priority time pattern found, scanning for all times...
-[2025-11-21 23:49:51] Found 3 time(s) in card
-[2025-11-21 23:49:51]   Keeping time 6:30pm
-[2025-11-21 23:49:51]     Context: ft Diamond Coin-Operated Tables
+[2025-11-22 00:12:43] ★ Marked card 19 as MATCHING CARD
+[2025-11-22 00:12:43] Found name in h3: 2025/11/05 Wednesday Night 9-Ball Tournament
+[2025-11-22 00:12:43] Date: 2025/11/05
+[2025-11-22 00:12:43] No priority time pattern found, scanning for all times...
+[2025-11-22 00:12:43] Found 3 time(s) in card
+[2025-11-22 00:12:43]   Keeping time 6:30pm
+[2025-11-22 00:12:43]     Context: ft Diamond Coin-Operated Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201
-[2025-11-21 23:49:51]   Keeping time 30pm
-[2025-11-21 23:49:51]     Context:  Diamond Coin-Operated Tables
+[2025-11-22 00:12:43]   Keeping time 30pm
+[2025-11-22 00:12:43]     Context:  Diamond Coin-Operated Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201 H
-[2025-11-21 23:49:51]   Keeping time 7pm
-[2025-11-21 23:49:51]     Context: ed Tables
+[2025-11-22 00:12:43]   Keeping time 7pm
+[2025-11-22 00:12:43]     Context: ed Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201 Hilliard-Rome Rd
 Hill
-[2025-11-21 23:49:51] Selected last filtered time as tournament start: 7pm
-[2025-11-21 23:49:51]   Player count: 16
-[2025-11-21 23:49:51] No explicit status keyword found, inferring from context...
-[2025-11-21 23:49:51] Found completion: 100%
-[2025-11-21 23:49:51] Status inferred: Completed (100% complete)
-[2025-11-21 23:49:51] Final status: Completed
-[2025-11-21 23:49:51] Constructed URL: https://digitalpool.com/tournaments/20251105-wednesday-night-9-ball-tournament/
-[2025-11-21 23:49:51] ✓ Successfully extracted tournament info
-[2025-11-21 23:49:51]   Name: 2025/11/05 Wednesday Night 9-Ball Tournament
-[2025-11-21 23:49:51]   Date: 2025/11/05
-[2025-11-21 23:49:51]   Time: 7pm
-[2025-11-21 23:49:51]   Status: Completed
-[2025-11-21 23:49:51] Saved card 20 debug files
-[2025-11-21 23:49:51] 
+[2025-11-22 00:12:43] Selected last filtered time as tournament start: 7pm
+[2025-11-22 00:12:43]   Player count: 16
+[2025-11-22 00:12:43] No explicit status keyword found, inferring from context...
+[2025-11-22 00:12:43] Found completion: 100%
+[2025-11-22 00:12:43] Status inferred: Completed (100% complete)
+[2025-11-22 00:12:43] Final status: Completed
+[2025-11-22 00:12:43] Constructed URL: https://digitalpool.com/tournaments/20251105-wednesday-night-9-ball-tournament/
+[2025-11-22 00:12:43] ✓ Successfully extracted tournament info
+[2025-11-22 00:12:43]   Name: 2025/11/05 Wednesday Night 9-Ball Tournament
+[2025-11-22 00:12:43]   Date: 2025/11/05
+[2025-11-22 00:12:43]   Time: 7pm
+[2025-11-22 00:12:43]   Status: Completed
+[2025-11-22 00:12:43] Saved card 20 debug files
+[2025-11-22 00:12:43] 
 ==================================================
-[2025-11-21 23:49:51] Card 20 - Found matching venue!
-[2025-11-21 23:49:51] ==================================================
-[2025-11-21 23:49:51] Card text:
+[2025-11-22 00:12:43] Card 20 - Found matching venue!
+[2025-11-22 00:12:43] ==================================================
+[2025-11-22 00:12:43] Card text:
 2025/11/01 Saturday Night 8-Ball Tournament
 November 1st 2025
 Bankshot Billiards - Hilliard, Ohio
@@ -992,51 +995,51 @@ Bankshot Billiards
 3201 Hilliard-Rome Rd
 Hilliard, OH 43026
 
-[2025-11-21 23:49:51] ★ Marked card 20 as MATCHING CARD
-[2025-11-21 23:49:51] Found name in h3: 2025/11/01 Saturday Night 8-Ball Tournament
-[2025-11-21 23:49:51] Date: 2025/11/01
-[2025-11-21 23:49:51] No priority time pattern found, scanning for all times...
-[2025-11-21 23:49:51] Found 3 time(s) in card
-[2025-11-21 23:49:51]   Keeping time 6:30pm
-[2025-11-21 23:49:51]     Context: ft Diamond Coin-Operated Tables
+[2025-11-22 00:12:43] ★ Marked card 20 as MATCHING CARD
+[2025-11-22 00:12:43] Found name in h3: 2025/11/01 Saturday Night 8-Ball Tournament
+[2025-11-22 00:12:43] Date: 2025/11/01
+[2025-11-22 00:12:43] No priority time pattern found, scanning for all times...
+[2025-11-22 00:12:43] Found 3 time(s) in card
+[2025-11-22 00:12:43]   Keeping time 6:30pm
+[2025-11-22 00:12:43]     Context: ft Diamond Coin-Operated Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201
-[2025-11-21 23:49:51]   Keeping time 30pm
-[2025-11-21 23:49:51]     Context:  Diamond Coin-Operated Tables
+[2025-11-22 00:12:43]   Keeping time 30pm
+[2025-11-22 00:12:43]     Context:  Diamond Coin-Operated Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201 H
-[2025-11-21 23:49:51]   Keeping time 7pm
-[2025-11-21 23:49:51]     Context: ed Tables
+[2025-11-22 00:12:43]   Keeping time 7pm
+[2025-11-22 00:12:43]     Context: ed Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201 Hilliard-Rome Rd
 Hill
-[2025-11-21 23:49:51] Selected last filtered time as tournament start: 7pm
-[2025-11-21 23:49:51]   Player count: 13
-[2025-11-21 23:49:51] No explicit status keyword found, inferring from context...
-[2025-11-21 23:49:51] Found completion: 100%
-[2025-11-21 23:49:51] Status inferred: Completed (100% complete)
-[2025-11-21 23:49:51] Final status: Completed
-[2025-11-21 23:49:51] Constructed URL: https://digitalpool.com/tournaments/20251101-saturday-night-8-ball-tournament/
-[2025-11-21 23:49:51] ✓ Successfully extracted tournament info
-[2025-11-21 23:49:51]   Name: 2025/11/01 Saturday Night 8-Ball Tournament
-[2025-11-21 23:49:51]   Date: 2025/11/01
-[2025-11-21 23:49:51]   Time: 7pm
-[2025-11-21 23:49:51]   Status: Completed
-[2025-11-21 23:49:51] Saved card 21 debug files
-[2025-11-21 23:49:51] 
+[2025-11-22 00:12:43] Selected last filtered time as tournament start: 7pm
+[2025-11-22 00:12:43]   Player count: 13
+[2025-11-22 00:12:43] No explicit status keyword found, inferring from context...
+[2025-11-22 00:12:43] Found completion: 100%
+[2025-11-22 00:12:43] Status inferred: Completed (100% complete)
+[2025-11-22 00:12:43] Final status: Completed
+[2025-11-22 00:12:43] Constructed URL: https://digitalpool.com/tournaments/20251101-saturday-night-8-ball-tournament/
+[2025-11-22 00:12:43] ✓ Successfully extracted tournament info
+[2025-11-22 00:12:43]   Name: 2025/11/01 Saturday Night 8-Ball Tournament
+[2025-11-22 00:12:43]   Date: 2025/11/01
+[2025-11-22 00:12:43]   Time: 7pm
+[2025-11-22 00:12:43]   Status: Completed
+[2025-11-22 00:12:43] Saved card 21 debug files
+[2025-11-22 00:12:43] 
 ==================================================
-[2025-11-21 23:49:51] Card 21 - Found matching venue!
-[2025-11-21 23:49:51] ==================================================
-[2025-11-21 23:49:51] Card text:
+[2025-11-22 00:12:43] Card 21 - Found matching venue!
+[2025-11-22 00:12:43] ==================================================
+[2025-11-22 00:12:43] Card text:
 2025/10/28 Wednesday Night 9-Ball Tournament
 October 29th 2025
 Bankshot Billiards - Hilliard, Ohio
@@ -1064,51 +1067,51 @@ Bankshot Billiards
 3201 Hilliard-Rome Rd
 Hilliard, OH 43026
 
-[2025-11-21 23:49:51] ★ Marked card 21 as MATCHING CARD
-[2025-11-21 23:49:51] Found name in h3: 2025/10/28 Wednesday Night 9-Ball Tournament
-[2025-11-21 23:49:51] Date: 2025/10/28
-[2025-11-21 23:49:51] No priority time pattern found, scanning for all times...
-[2025-11-21 23:49:51] Found 3 time(s) in card
-[2025-11-21 23:49:51]   Keeping time 6:30pm
-[2025-11-21 23:49:51]     Context: ft Diamond Coin-Operated Tables
+[2025-11-22 00:12:43] ★ Marked card 21 as MATCHING CARD
+[2025-11-22 00:12:43] Found name in h3: 2025/10/28 Wednesday Night 9-Ball Tournament
+[2025-11-22 00:12:43] Date: 2025/10/28
+[2025-11-22 00:12:43] No priority time pattern found, scanning for all times...
+[2025-11-22 00:12:43] Found 3 time(s) in card
+[2025-11-22 00:12:43]   Keeping time 6:30pm
+[2025-11-22 00:12:43]     Context: ft Diamond Coin-Operated Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201
-[2025-11-21 23:49:51]   Keeping time 30pm
-[2025-11-21 23:49:51]     Context:  Diamond Coin-Operated Tables
+[2025-11-22 00:12:43]   Keeping time 30pm
+[2025-11-22 00:12:43]     Context:  Diamond Coin-Operated Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201 H
-[2025-11-21 23:49:51]   Keeping time 7pm
-[2025-11-21 23:49:51]     Context: ed Tables
+[2025-11-22 00:12:43]   Keeping time 7pm
+[2025-11-22 00:12:43]     Context: ed Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201 Hilliard-Rome Rd
 Hill
-[2025-11-21 23:49:51] Selected last filtered time as tournament start: 7pm
-[2025-11-21 23:49:51]   Player count: 15
-[2025-11-21 23:49:51] No explicit status keyword found, inferring from context...
-[2025-11-21 23:49:51] Found completion: 100%
-[2025-11-21 23:49:51] Status inferred: Completed (100% complete)
-[2025-11-21 23:49:51] Final status: Completed
-[2025-11-21 23:49:51] Constructed URL: https://digitalpool.com/tournaments/20251028-wednesday-night-9-ball-tournament/
-[2025-11-21 23:49:51] ✓ Successfully extracted tournament info
-[2025-11-21 23:49:51]   Name: 2025/10/28 Wednesday Night 9-Ball Tournament
-[2025-11-21 23:49:51]   Date: 2025/10/28
-[2025-11-21 23:49:51]   Time: 7pm
-[2025-11-21 23:49:51]   Status: Completed
-[2025-11-21 23:49:51] Saved card 22 debug files
-[2025-11-21 23:49:51] 
+[2025-11-22 00:12:43] Selected last filtered time as tournament start: 7pm
+[2025-11-22 00:12:43]   Player count: 15
+[2025-11-22 00:12:43] No explicit status keyword found, inferring from context...
+[2025-11-22 00:12:43] Found completion: 100%
+[2025-11-22 00:12:43] Status inferred: Completed (100% complete)
+[2025-11-22 00:12:43] Final status: Completed
+[2025-11-22 00:12:43] Constructed URL: https://digitalpool.com/tournaments/20251028-wednesday-night-9-ball-tournament/
+[2025-11-22 00:12:43] ✓ Successfully extracted tournament info
+[2025-11-22 00:12:43]   Name: 2025/10/28 Wednesday Night 9-Ball Tournament
+[2025-11-22 00:12:43]   Date: 2025/10/28
+[2025-11-22 00:12:43]   Time: 7pm
+[2025-11-22 00:12:43]   Status: Completed
+[2025-11-22 00:12:43] Saved card 22 debug files
+[2025-11-22 00:12:43] 
 ==================================================
-[2025-11-21 23:49:51] Card 22 - Found matching venue!
-[2025-11-21 23:49:51] ==================================================
-[2025-11-21 23:49:51] Card text:
+[2025-11-22 00:12:43] Card 22 - Found matching venue!
+[2025-11-22 00:12:43] ==================================================
+[2025-11-22 00:12:43] Card text:
 2025/10/25 Saturday Night 8-Ball Tournament
 October 25th 2025
 Bankshot Billiards - Hilliard, Ohio
@@ -1135,51 +1138,51 @@ Bankshot Billiards
 3201 Hilliard-Rome Rd
 Hilliard, OH 43026
 
-[2025-11-21 23:49:51] ★ Marked card 22 as MATCHING CARD
-[2025-11-21 23:49:51] Found name in h3: 2025/10/25 Saturday Night 8-Ball Tournament
-[2025-11-21 23:49:51] Date: 2025/10/25
-[2025-11-21 23:49:51] No priority time pattern found, scanning for all times...
-[2025-11-21 23:49:51] Found 3 time(s) in card
-[2025-11-21 23:49:51]   Keeping time 6:30pm
-[2025-11-21 23:49:51]     Context: ft Diamond Coin-Operated Tables
+[2025-11-22 00:12:43] ★ Marked card 22 as MATCHING CARD
+[2025-11-22 00:12:43] Found name in h3: 2025/10/25 Saturday Night 8-Ball Tournament
+[2025-11-22 00:12:43] Date: 2025/10/25
+[2025-11-22 00:12:43] No priority time pattern found, scanning for all times...
+[2025-11-22 00:12:43] Found 3 time(s) in card
+[2025-11-22 00:12:43]   Keeping time 6:30pm
+[2025-11-22 00:12:43]     Context: ft Diamond Coin-Operated Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201
-[2025-11-21 23:49:51]   Keeping time 30pm
-[2025-11-21 23:49:51]     Context:  Diamond Coin-Operated Tables
+[2025-11-22 00:12:43]   Keeping time 30pm
+[2025-11-22 00:12:43]     Context:  Diamond Coin-Operated Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201 H
-[2025-11-21 23:49:51]   Keeping time 7pm
-[2025-11-21 23:49:51]     Context: ed Tables
+[2025-11-22 00:12:43]   Keeping time 7pm
+[2025-11-22 00:12:43]     Context: ed Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201 Hilliard-Rome Rd
 Hill
-[2025-11-21 23:49:51] Selected last filtered time as tournament start: 7pm
-[2025-11-21 23:49:51]   Player count: 29
-[2025-11-21 23:49:51] No explicit status keyword found, inferring from context...
-[2025-11-21 23:49:51] Found completion: 100%
-[2025-11-21 23:49:51] Status inferred: Completed (100% complete)
-[2025-11-21 23:49:51] Final status: Completed
-[2025-11-21 23:49:51] Constructed URL: https://digitalpool.com/tournaments/20251025-saturday-night-8-ball-tournament/
-[2025-11-21 23:49:51] ✓ Successfully extracted tournament info
-[2025-11-21 23:49:51]   Name: 2025/10/25 Saturday Night 8-Ball Tournament
-[2025-11-21 23:49:51]   Date: 2025/10/25
-[2025-11-21 23:49:51]   Time: 7pm
-[2025-11-21 23:49:51]   Status: Completed
-[2025-11-21 23:49:51] Saved card 23 debug files
-[2025-11-21 23:49:51] 
+[2025-11-22 00:12:43] Selected last filtered time as tournament start: 7pm
+[2025-11-22 00:12:43]   Player count: 29
+[2025-11-22 00:12:43] No explicit status keyword found, inferring from context...
+[2025-11-22 00:12:43] Found completion: 100%
+[2025-11-22 00:12:43] Status inferred: Completed (100% complete)
+[2025-11-22 00:12:43] Final status: Completed
+[2025-11-22 00:12:43] Constructed URL: https://digitalpool.com/tournaments/20251025-saturday-night-8-ball-tournament/
+[2025-11-22 00:12:43] ✓ Successfully extracted tournament info
+[2025-11-22 00:12:43]   Name: 2025/10/25 Saturday Night 8-Ball Tournament
+[2025-11-22 00:12:43]   Date: 2025/10/25
+[2025-11-22 00:12:43]   Time: 7pm
+[2025-11-22 00:12:43]   Status: Completed
+[2025-11-22 00:12:44] Saved card 23 debug files
+[2025-11-22 00:12:44] 
 ==================================================
-[2025-11-21 23:49:51] Card 23 - Found matching venue!
-[2025-11-21 23:49:51] ==================================================
-[2025-11-21 23:49:51] Card text:
+[2025-11-22 00:12:44] Card 23 - Found matching venue!
+[2025-11-22 00:12:44] ==================================================
+[2025-11-22 00:12:44] Card text:
 2025/10/22 Wednesday Night 9-Ball
 October 22nd 2025
 Bankshot Billiards - Hilliard, Ohio
@@ -1207,73 +1210,59 @@ Bankshot Billiards
 3201 Hilliard-Rome Rd
 Hilliard, OH 43026
 
-[2025-11-21 23:49:51] ★ Marked card 23 as MATCHING CARD
-[2025-11-21 23:49:51] Found name in h3: 2025/10/22 Wednesday Night 9-Ball
-[2025-11-21 23:49:51] Date: 2025/10/22
-[2025-11-21 23:49:51] No priority time pattern found, scanning for all times...
-[2025-11-21 23:49:51] Found 3 time(s) in card
-[2025-11-21 23:49:51]   Keeping time 6:30pm
-[2025-11-21 23:49:51]     Context: ft Diamond Coin-Operated Tables
+[2025-11-22 00:12:44] ★ Marked card 23 as MATCHING CARD
+[2025-11-22 00:12:44] Found name in h3: 2025/10/22 Wednesday Night 9-Ball
+[2025-11-22 00:12:44] Date: 2025/10/22
+[2025-11-22 00:12:44] No priority time pattern found, scanning for all times...
+[2025-11-22 00:12:44] Found 3 time(s) in card
+[2025-11-22 00:12:44]   Keeping time 6:30pm
+[2025-11-22 00:12:44]     Context: ft Diamond Coin-Operated Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201
-[2025-11-21 23:49:51]   Keeping time 30pm
-[2025-11-21 23:49:51]     Context:  Diamond Coin-Operated Tables
+[2025-11-22 00:12:44]   Keeping time 30pm
+[2025-11-22 00:12:44]     Context:  Diamond Coin-Operated Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201 H
-[2025-11-21 23:49:51]   Keeping time 7pm
-[2025-11-21 23:49:51]     Context: ed Tables
+[2025-11-22 00:12:44]   Keeping time 7pm
+[2025-11-22 00:12:44]     Context: ed Tables
 Sign Ups Start at 6:30pm
 Play begins at 7pm
 
 Bankshot Billiards
 3201 Hilliard-Rome Rd
 Hill
-[2025-11-21 23:49:51] Selected last filtered time as tournament start: 7pm
-[2025-11-21 23:49:51]   Player count: 19
-[2025-11-21 23:49:51] No explicit status keyword found, inferring from context...
-[2025-11-21 23:49:51] Found completion: 100%
-[2025-11-21 23:49:51] Status inferred: Completed (100% complete)
-[2025-11-21 23:49:51] Final status: Completed
-[2025-11-21 23:49:51] Constructed URL: https://digitalpool.com/tournaments/20251022-wednesday-night-9-ball/
-[2025-11-21 23:49:51] ✓ Successfully extracted tournament info
-[2025-11-21 23:49:51]   Name: 2025/10/22 Wednesday Night 9-Ball
-[2025-11-21 23:49:51]   Date: 2025/10/22
-[2025-11-21 23:49:51]   Time: 7pm
-[2025-11-21 23:49:51]   Status: Completed
-[2025-11-21 23:49:51] 
+[2025-11-22 00:12:44] Selected last filtered time as tournament start: 7pm
+[2025-11-22 00:12:44]   Player count: 19
+[2025-11-22 00:12:44] No explicit status keyword found, inferring from context...
+[2025-11-22 00:12:44] Found completion: 100%
+[2025-11-22 00:12:44] Status inferred: Completed (100% complete)
+[2025-11-22 00:12:44] Final status: Completed
+[2025-11-22 00:12:44] Constructed URL: https://digitalpool.com/tournaments/20251022-wednesday-night-9-ball/
+[2025-11-22 00:12:44] ✓ Successfully extracted tournament info
+[2025-11-22 00:12:44]   Name: 2025/10/22 Wednesday Night 9-Ball
+[2025-11-22 00:12:44]   Date: 2025/10/22
+[2025-11-22 00:12:44]   Time: 7pm
+[2025-11-22 00:12:44]   Status: Completed
+[2025-11-22 00:12:44] 
 ✓ Found 20 tournament(s) total
-[2025-11-21 23:49:51] 
+[2025-11-22 00:12:44] 
 ★★★ DEBUG SUMMARY SAVED: /tmp/tournament_debug/DEBUG_SUMMARY.txt ★★★
-[2025-11-21 23:49:51] Review the files in /tmp/tournament_debug/ to see all card data
-[2025-11-21 23:49:51] 
+[2025-11-22 00:12:44] Review the files in /tmp/tournament_debug/ to see all card data
+[2025-11-22 00:12:44] 
 ============================================================
-[2025-11-21 23:49:51] Found 1 tournament(s) for today (2025/11/21)
-[2025-11-21 23:49:51] ============================================================
-[2025-11-21 23:49:51] 
-  Tournament: 2025/11/21 Friday Night 8-Ball Tournament
-[2025-11-21 23:49:51]   Start time: 7pm
-[2025-11-21 23:49:51]   Status: In Progress
-[2025-11-21 23:49:51] 
+[2025-11-22 00:12:44] Found 0 tournament(s) for today (2025/11/22)
+[2025-11-22 00:12:44] ============================================================
+[2025-11-22 00:12:44] No tournaments to display
+[2025-11-22 00:12:44] ✓ Saved to tournament_data.json
+[2025-11-22 00:12:44] ✓ Saved to tournament_data.json
+[2025-11-22 00:12:44] 
 ============================================================
-[2025-11-21 23:49:51] DETERMINING WHICH TOURNAMENT TO DISPLAY
-[2025-11-21 23:49:51] ============================================================
-[2025-11-21 23:49:51] Found 1 tournament(s) in progress
-[2025-11-21 23:49:51] Selecting in-progress tournament: 2025/11/21 Friday Night 8-Ball Tournament
-[2025-11-21 23:49:51] 
-Tournament to display: 2025/11/21 Friday Night 8-Ball Tournament
-[2025-11-21 23:49:51] Status: In Progress
-[2025-11-21 23:49:51] Display flag: True
-[2025-11-21 23:49:51] ✓ Tournament will be displayed (Upcoming or In Progress)
-[2025-11-21 23:49:51] ✓ Saved to tournament_data.json
-[2025-11-21 23:49:51] ✓ Saved to tournament_data.json
-[2025-11-21 23:49:51] 
-============================================================
-[2025-11-21 23:49:51] MONITOR COMPLETED
-[2025-11-21 23:49:51] ============================================================
-[2025-11-21 23:49:51] ✓ Selected tournament to display
+[2025-11-22 00:12:44] MONITOR COMPLETED
+[2025-11-22 00:12:44] ============================================================
+[2025-11-22 00:12:44] ○ No tournament to display
